@@ -21,4 +21,3 @@ class ContinuousSimulation(BaseSimulation):
         Runs the continuous simulation.
         """
         pass  # This method should be implemented by subclasses
-

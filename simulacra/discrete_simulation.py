@@ -28,4 +28,3 @@ class DiscreteEventSimulation(BaseSimulation):
         """
         for _ in range(self.days):
             self.simulate_timestep()
-

@@ -29,4 +29,3 @@ class BaseSimulation:
         Abstract method that should be implemented by subclasses to run the simulation.
         """
         raise NotImplementedError("run_simulation must be implemented by the subclass")
-
