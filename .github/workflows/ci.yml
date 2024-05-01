@@ -48,6 +48,7 @@ jobs:
           publish_dir: ./site
 
       - name: Build and publish
+        if: startsWith(github.ref, 'refs/tags/v')
         env:
-          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
         run: poetry publish --build
