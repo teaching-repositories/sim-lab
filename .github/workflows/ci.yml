@@ -1,0 +1,48 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    
+    - name: Install dependencies
+      run: |
+        pip install poetry
+        poetry install
+    
+    - name: Lint with flake8
+      run: |
+        poetry run flake8 your_package_name/
+
+    - name: Type check
+      run: |
+        poetry run mypy simulacra/simulacra
+    
+    - name: Run tests with pytest
+      run: |
+        poetry run pytest
+
+    - name: Build MkDocs Documentation
+      run: |
+        poetry run mkdocs build
+
+    - name: Deploy MkDocs Documentation
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+
