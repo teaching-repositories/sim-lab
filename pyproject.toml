@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "simulacra"
+version = "0.1.0"
+description = ""
+authors = ["Michael Borck <michael.borck@curtin.edu.au>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+mkdocs = "^1.6.0"
+mkdocstrings = "^0.25.0"
+mypy = "^1.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
