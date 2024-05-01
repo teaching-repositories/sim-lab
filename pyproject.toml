@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simulacra"
-version = "0.1.0"
+version = "0.1.1"
 description = "This Python package provides a set of classes for simulating various business-related scenarios. It is designed for educational use, allowing students to experiment with modeling, analysis, and decision-making in different contexts."
 authors = ["Michael Borck <michael@borck.me>"]
 readme = "README.md"
