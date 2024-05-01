@@ -25,11 +25,11 @@ jobs:
     
     - name: Lint with flake8
       run: |
-        poetry run flake8 your_package_name/
+        poetry run flake8 simulacra/
 
     - name: Type check
       run: |
-        poetry run mypy simulacra/simulacra
+        poetry run mypy simulacra
     
     - name: Run tests with pytest
       run: |
