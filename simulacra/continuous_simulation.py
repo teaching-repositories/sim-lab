@@ -1,3 +1,6 @@
+from .base_simulation import BaseSimulation
+from typing import Optional
+
 class ContinuousSimulation(BaseSimulation):
     """
     Represents a simulation that updates continuously over time.
@@ -5,7 +8,7 @@ class ContinuousSimulation(BaseSimulation):
 
     def __init__(self, time_step: float, units: str, simulation_detail: str, random_seed: Optional[int] = None) -> None:
         """
-        Initializes a continuous simulation with specific attributes.
+        Initialises a continuous simulation with specific attributes.
 
         Parameters:
             time_step (float): The time step between updates in the simulation.

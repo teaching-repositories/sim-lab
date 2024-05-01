@@ -1,3 +1,7 @@
+from .continuous_simulation import ContinuousSimulation
+from typing import Optional
+
+
 class DiseaseSimulation(ContinuousSimulation):
     """
     Simulates the spread of a disease through a population over time, incorporating factors like infection rate and recovery rate.

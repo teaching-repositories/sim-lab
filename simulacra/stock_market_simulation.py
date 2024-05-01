@@ -1,11 +1,14 @@
+from .continuous_simulation import ContinuousSimulation
+from typing import Optional
+
 class StockMarketSimulation(ContinuousSimulation):
     """
-    A simulation class to model stock market behavior with specified initial conditions and market dynamics.
+    A simulation class to model stock market behaviour with specified initial conditions and market dynamics.
     """
 
     def __init__(self, start_price: float, days: int, volatility: float, drift: float, event_day: Optional[int] = None, event_impact: Optional[float] = None) -> None:
         """
-        Initializes a new stock market simulation.
+        Initialises a new stock market simulation.
 
         Parameters:
             start_price (float): The starting price of the stock.

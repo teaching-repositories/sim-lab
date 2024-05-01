@@ -1,3 +1,7 @@
+from .continuous_simulation import ContinuousSimulation
+from typing import Optional
+
+
 class ResourceSimulation(ContinuousSimulation):
     """
     Simulates the management of resources over time, accounting for consumption and replenishment rates.
@@ -5,7 +9,7 @@ class ResourceSimulation(ContinuousSimulation):
 
     def __init__(self, start_resources: int, days: int, consumption_rate: float, replenishment_rate: float) -> None:
         """
-        Initializes a new resource management simulation.
+        Initialises a new resource management simulation.
 
         Parameters:
             start_resources (int): The initial amount of resources available.

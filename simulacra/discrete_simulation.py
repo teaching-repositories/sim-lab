@@ -1,3 +1,7 @@
+from .base_simulation import BaseSimulation
+from typing import Optional
+
+
 class DiscreteEventSimulation(BaseSimulation):
     """
     Represents a discrete event simulation where updates occur at discrete time steps or based on specific events.
@@ -5,7 +9,7 @@ class DiscreteEventSimulation(BaseSimulation):
 
     def __init__(self, time_step: float, units: str, event_description: str, random_seed: Optional[int] = None) -> None:
         """
-        Initializes a discrete event simulation with specific attributes.
+        Initialises a discrete event simulation with specific attributes.
 
         Parameters:
             time_step (float): The time interval at which events are processed.

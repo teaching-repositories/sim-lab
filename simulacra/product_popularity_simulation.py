@@ -1,3 +1,7 @@
+from .continuous_simulation import ContinuousSimulation
+from typing import Optional
+
+
 class ProductPopularitySimulation(ContinuousSimulation):
     """
     Simulates the rise and fall of product popularity over time based on initial popularity and growth factors.
@@ -5,7 +9,7 @@ class ProductPopularitySimulation(ContinuousSimulation):
 
     def __init__(self, initial_popularity: int, days: int, growth_rate: float, event_day: Optional[int] = None, event_impact: Optional[float] = None) -> None:
         """
-        Initializes a new product popularity simulation.
+        Initialises a new product popularity simulation.
 
         Parameters:
             initial_popularity (int): The initial popularity level of the product.

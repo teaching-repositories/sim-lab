@@ -4,7 +4,7 @@ from typing import Optional
 class BaseSimulation:
     """
     Base class for creating different types of simulations.
-    
+
     Attributes:
         time_step (float): The time step between simulation points.
         units (str): The measurement units for the simulation results.
@@ -16,7 +16,7 @@ class BaseSimulation:
 
     def __init__(self, time_step: float, units: str, random_seed: Optional[int] = None) -> None:
         """
-        Initializes the BaseSimulation with given time step, units, and optional random seed.
+        Initialises the BaseSimulation with given time step, units, and optional random seed.
         """
         self.time_step = time_step
         self.units = units
