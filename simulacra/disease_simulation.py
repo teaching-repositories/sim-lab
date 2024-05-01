@@ -1,5 +1,4 @@
 from .continuous_simulation import ContinuousSimulation
-from typing import Optional
 
 
 class DiseaseSimulation(ContinuousSimulation):

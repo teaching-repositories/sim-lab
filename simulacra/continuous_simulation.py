@@ -1,6 +1,7 @@
 from .base_simulation import BaseSimulation
 from typing import Optional
 
+
 class ContinuousSimulation(BaseSimulation):
     """
     Represents a simulation that updates continuously over time.

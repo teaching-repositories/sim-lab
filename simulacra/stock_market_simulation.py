@@ -1,6 +1,7 @@
 from .continuous_simulation import ContinuousSimulation
 from typing import Optional
 
+
 class StockMarketSimulation(ContinuousSimulation):
     """
     A simulation class to model stock market behaviour with specified initial conditions and market dynamics.

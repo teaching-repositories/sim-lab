@@ -1,6 +1,7 @@
 import random
 from typing import Optional
 
+
 class BaseSimulation:
     """
     Base class for creating different types of simulations.
@@ -22,7 +23,7 @@ class BaseSimulation:
         self.units = units
         self.random_seed = random_seed
         if random_seed:
-            random.seed(random_seed)  # For reproducibility 
+            random.seed(random_seed)  # For reproducibility
 
     def run_simulation(self) -> None:
         """
