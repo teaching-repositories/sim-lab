@@ -19,4 +19,5 @@ class StockMarketSimulation(ContinuousSimulation):
             event_day (Optional[int]): A specific day an event occurs that might affect the stock price.
             event_impact (Optional[float]): The impact of the event on the stock price.
         """
-        super().__init__(days)
+        # super().__init__(days)
+        pass

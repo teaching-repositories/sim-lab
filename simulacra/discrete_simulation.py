@@ -30,5 +30,4 @@ class DiscreteEventSimulation(BaseSimulation):
         """
         Runs the simulation by iterating over defined time steps or events.
         """
-        for _ in range(self.days):
-            self.simulate_timestep()
+        pass

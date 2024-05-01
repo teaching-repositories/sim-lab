@@ -16,4 +16,5 @@ class DiseaseSimulation(ContinuousSimulation):
             recovery_rate (float): The rate at which infected individuals recover from the disease.
             days (int): The total number of days to simulate the disease spread.
         """
-        super().__init__(days)
+        # super().__init__(days)
+        pass

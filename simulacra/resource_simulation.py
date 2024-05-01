@@ -16,4 +16,5 @@ class ResourceSimulation(ContinuousSimulation):
             consumption_rate (float): The rate at which resources are consumed daily.
             replenishment_rate (float): The rate at which resources are replenished daily.
         """
-        super().__init__(days)
+        # super().__init__(days)
+        pass
