@@ -47,7 +47,7 @@ class ProductPopularitySimulation:
         if random_seed is not None:
             np.random.seed(random_seed)
 
-    def run_simulation(self) -> List[int]:
+    def run_simulation(self) -> List[float]:
         """
         Simulates the demand for a product over a specified number of days based on the initial settings.
 
