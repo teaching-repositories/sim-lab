@@ -4,7 +4,7 @@ from typing import List, Optional
 
 class StockMarketSimulation:
     """
-    A simulation class to model the fluctuations of stock prices over time, accounting for volatility, 
+    A simulation class to model the fluctuations of stock prices over time, accounting for volatility,
     general market trends (drift), and specific market events.
 
     Attributes:
@@ -22,7 +22,7 @@ class StockMarketSimulation:
 
     def __init__(
         self, start_price: float, days: int, volatility: float, drift: float,
-        event_day: Optional[int] = None, event_impact: float = 0, 
+        event_day: Optional[int] = None, event_impact: float = 0,
         random_seed: Optional[int] = None
     ) -> None:
         """

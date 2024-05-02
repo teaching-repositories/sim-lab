@@ -20,7 +20,17 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.11
-      
+
+      - name: Cache Poetry dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pypoetry
+            !~/.cache/pypoetry/artifacts
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-poetry-
+
       - name: Install dependencies
         run: |
           pip install poetry
@@ -49,8 +59,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-
-      - name: Build and publish
-        env:
-          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
-        run: poetry publish --build

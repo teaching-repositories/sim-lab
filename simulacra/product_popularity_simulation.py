@@ -1,7 +1,6 @@
 import numpy as np
 from typing import List, Optional
 
-
 class ProductPopularitySimulation:
     """
     A simulation class to model the dynamics of product popularity over time,
