@@ -1,27 +1,23 @@
-from .base_simulation import BaseSimulation
-from typing import Optional
-
+from simulacra.base_simulation import BaseSimulation
+import numpy as np
+from typing import List
+from random import normalvariate
 
 class ContinuousSimulation(BaseSimulation):
-    """
-    Represents a simulation that updates continuously over time.
-    """
+    def __init__(self, start_value: float, timesteps: int, volatility: float, 
+                 drift: float, time_unit: str = "days") -> None:
+        super().__init__(timesteps, time_unit=time_unit)
+        self.start_value: float = start_value
+        self.volatility: float = volatility
+        self.drift: float = drift
 
-    def __init__(self, time_step: float, units: str, simulation_detail: str, random_seed: Optional[int] = None) -> None:
-        """
-        Initialises a continuous simulation with specific attributes.
+    def generate_values(self) -> List[float]:  
+        values: List[float] = [self.start_value]
+        for _ in range(1, self.timesteps):
+            change: float = normalvariate(mu=self.drift, sigma=self.volatility)
+            new_value: float = values[-1] * (1 + change)
+            values.append(new_value)
+        return values
 
-        Parameters:
-            time_step (float): The time step between updates in the simulation.
-            units (str): The units of measurement for output data.
-            simulation_detail (str): Details specific to continuous simulations.
-            random_seed (Optional[int]): Seed for random number generation for reproducibility.
-        """
-        super().__init__(time_step, units, random_seed)
-        self.simulation_detail = simulation_detail
-
-    def run_simulation(self) -> None:
-        """
-        Runs the continuous simulation.
-        """
-        pass  # This method should be implemented by subclasses
+    def run_simulation(self) -> np.ndarray: 
+        return np.array(self.generate_values()) 

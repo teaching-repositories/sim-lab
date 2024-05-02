@@ -1,20 +1,16 @@
-from .continuous_simulation import ContinuousSimulation
-
+from simulacra.continuous_simulation import ContinuousSimulation
+from typing import Tuple
+import numpy as np
 
 class DiseaseSimulation(ContinuousSimulation):
-    """
-    Simulates the spread of a disease through a population over time, incorporating factors like infection rate and recovery rate.
-    """
+    def __init__(self, start_population: int, timesteps: int, infection_rate: float, 
+                 recovery_rate: float, outbreak_day: int = None, severity: float = None):
+        # Changes here (see explanation below)
+        super().__init__(start_population, timesteps, infection_rate, recovery_rate, time_unit="days")
+        self.outbreak_day = outbreak_day
+        self.severity = severity
 
-    def __init__(self, start_population: int, infection_rate: float, recovery_rate: float, days: int) -> None:
-        """
-        Initializes a new disease simulation.
-
-        Parameters:
-            start_population (int): The initial population at risk of infection.
-            infection_rate (float): The rate at which the disease spreads among the population.
-            recovery_rate (float): The rate at which infected individuals recover from the disease.
-            days (int): The total number of days to simulate the disease spread.
-        """
-        # super().__init__(days)
-        pass
+    def run_simulation(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+        # Placeholder for disease modeling logic - your existing logic would go here 
+        susceptible, infected, recovered = super().run_simulation()  
+        return susceptible, infected, recovered 

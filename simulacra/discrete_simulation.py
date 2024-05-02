@@ -1,33 +1,26 @@
-from .base_simulation import BaseSimulation
-from typing import Optional
+from simulacra.base_simulation import BaseSimulation
+import numpy as np
+from typing import List
+from random import choice
 
+class DiscreteSimulation(BaseSimulation):
+    def __init__(self, start_value: float, timesteps: int, possible_values: List[float], probabilities: List[float], time_unit: str = "days") -> None:
+        super().__init__(timesteps, time_unit=time_unit)
+        self.start_value: float = start_value
+        self.possible_values: List[float] = possible_values
+        self.probabilities: List[float] = probabilities
 
-class DiscreteEventSimulation(BaseSimulation):
-    """
-    Represents a discrete event simulation where updates occur at discrete time steps or based on specific events.
-    """
+        # Check if the lengths of possible_values and probabilities match
+        if len(self.possible_values) != len(self.probabilities):
+            raise ValueError("Lengths of possible_values and probabilities must match")
 
-    def __init__(self, time_step: float, units: str, event_description: str, random_seed: Optional[int] = None) -> None:
-        """
-        Initialises a discrete event simulation with specific attributes.
+    def generate_values(self) -> List[float]:
+        values: List[float] = [self.start_value]
+        for _ in range(1, self.timesteps):
+            # Randomly choose a value based on the given probabilities
+            new_value = choice(self.possible_values, p=self.probabilities)
+            values.append(new_value)
+        return values
 
-        Parameters:
-            time_step (float): The time interval at which events are processed.
-            units (str): The units of measurement for output data.
-            event_description (str): Descriptive details about the events being simulated.
-            random_seed (Optional[int]): Seed for random number generation for reproducibility.
-        """
-        super().__init__(time_step, units, random_seed)
-        self.event_description = event_description
-
-    def simulate_timestep(self) -> None:
-        """
-        Defines how the simulation updates at each discrete time step or event.
-        """
-        pass  # Placeholder for implementation in subclasses
-
-    def run_simulation(self) -> None:
-        """
-        Runs the simulation by iterating over defined time steps or events.
-        """
-        pass
+    def run_simulation(self) -> np.ndarray:
+        return np.array(self.generate_values())
