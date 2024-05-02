@@ -2,10 +2,10 @@ import numpy as np
 from typing import List, Optional
 
 
-class ResourceSimulation:
+class ResourceFluctuationsSimulation:
     """
-    A simulation class to model the price fluctuations of a critical resource over time,
-    considering factors like volatility, drift, and supply disruptions.
+    A simulation class to model the fluctuations of resource prices over time,
+    considering factors like volatility, market trends (drift), and supply disruptions.
 
     Attributes:
         start_price (float): The initial price of the resource.
@@ -15,11 +15,7 @@ class ResourceSimulation:
         supply_disruption_day (Optional[int]): The specific day a supply disruption occurs (default is None).
         disruption_severity (float): The magnitude of the disruption's impact on price (default is 0).
         random_seed (Optional[int]): The seed for the random number generator to ensure reproducibility (default is None).
-
-    Methods:
-        run_simulation(): Runs the simulation and returns a list of prices over the simulation period.
     """
-
     def __init__(self, start_price: float, days: int, volatility: float, drift: float,
                  supply_disruption_day: Optional[int] = None, disruption_severity: float = 0,
                  random_seed: Optional[int] = None) -> None:

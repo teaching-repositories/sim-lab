@@ -1,35 +1,41 @@
 # Simulacra: Business Simulation Toolkit
 
-This Python package provides a set of classes for simulating various business-related scenarios. It is designed for educational use, allowing students to experiment with modeling, analysis, and decision-making in different contexts.
+This Python package provides a set of classes for simulating various
+business-related scenarios. It is designed for educational use, allowing
+students to experiment with modeling, analysis, and decision-making in different
+contexts.
 
 ## Installation
 
 To install Simulacra, you can use pip directly from GitHub:
 
 ```bash
-pip install git+https://github.com/<your_username>/simulacra.git
+pip install git+https://github.com/teaching-repositories/simulacra.git
 ```
 
 ## Available Simulations
 
-- **Disease Spread Simulation:** Model the spread of an infectious disease, explore infection and recovery rates, and simulate the effects of interventions.
-- **Stock Market Simulation:** Simulate stock price fluctuations, incorporate technical indicators, and develop simple trading strategies.
-- **Resource Fluctuations Simulation:** Model changes in the price of a resource, analyze supply/demand dynamics, and implement hedging strategies.
-- **Product Popularity Simulation:** Simulate the rise and fall of product demand, investigate virality factors, and examine different marketing strategies.
+- **Stock Market Simulation:** Simulate stock price fluctuations, incorporate
+  technical indicators, and develop simple trading strategies.
+- **Resource Fluctuations Simulation:** Model changes in the price of a
+  resource, analyze supply/demand dynamics, and implement hedging strategies.
+- **Product Popularity Simulation:** Simulate the rise and fall of product
+  demand, investigate virality factors, and examine different marketing
+  strategies.
 
 ## Basic Usage Example
 
-Here is an example of how to use the Disease Simulation:
+Here is an example of how to use the Resource Fluctuations Simulation:
 
 ```python
-from simulacra import DiseaseSimulation
+from simulacra import ResourceFluctuationsSimulation
 
-# Create a disease simulation
-sim = DiseaseSimulation(start_population=5000, days=100, infection_rate=0.25, 
-                        recovery_rate=0.08, outbreak_day=30, severity=0.2)
+# Create a resource simulation
+sim = ResourceFluctuationsSimulation(start_price=100, days=365, volatility=0.05, drift=0.01,
+                         supply_disruption_day=180, disruption_severity=0.2)
 
 # Run the simulation and get results
-susceptible, infected, recovered = sim.run_simulation()
+prices = sim.run_simulation()
 
 # Visualize or analyze the results here
 ```
