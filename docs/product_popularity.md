@@ -75,38 +75,11 @@ Implement various hypothetical marketing strategies with assumed costs and effec
 
   - How does the cost of a strategy relate to its effectiveness in boosting demand?
 
+## Model Description
 
-## Model Formulation
+The Product Popularity Simulation class models the demand for a product over time, considering factors such as natural growth, marketing impact, and promotional campaigns. The simulation formula includes:
+- Natural Growth: \( \text{Natural Growth} = \text{Previous Demand} \times (1 + \text{Growth Rate}) \)
+- Marketing Influence: \( \text{Marketing Influence} = \text{Previous Demand} \times \text{Marketing Impact} \)
+- Promotional Impact: On promotional days, the demand is further adjusted by a factor of \( \text{Promotion Effectiveness} \).
 
-The formula used in the `ProductPopularitySimulation` class for simulating product demand appears to incorporate several key factors: natural growth, marketing impact, and promotional campaigns. Here's a breakdown of how the formula works for each day of the simulation:
-
-1. **Natural Growth:** The natural growth of the product's demand is modeled as a simple exponential growth, which is a common model in population dynamics and economics. Each day, the demand increases by a percentage defined by the `growth_rate` attribute. The formula for this part is:
-   \[
-   \text{Natural Growth} = \text{Previous Demand} \times (1 + \text{Growth Rate})
-   \]
-
-2. **Marketing Impact:** On top of the natural growth, the formula also includes a daily impact from ongoing marketing efforts. This impact is additive and is calculated as a percentage of the previous day's demand, determined by the `marketing_impact` attribute:
-   \[
-   \text{Marketing Influence} = \text{Previous Demand} \times \text{Marketing Impact}
-   \]
-
-3. **Promotional Campaign:** If a promotional campaign occurs on a specific day (defined by `promotion_day`), the demand for that day is further increased by a factor of `promotion_effectiveness`. This is modeled as a multiplicative boost to the demand calculated from natural growth and marketing influence:
-   \[
-   \text{New Demand} = (\text{Natural Growth} + \text{Marketing Influence}) \times (1 + \text{Promotion Effectiveness})
-   \]
-
-The overall formula for days without a promotional campaign is:
-\[
-\text{New Demand} = \text{Natural Growth} + \text{Marketing Influence}
-\]
-
-For the day with the promotional campaign, the formula changes as mentioned above.
-
-### Relation to Classical Models
-
-The model presented in the `ProductPopularitySimulation` class is not based directly on any classical single formula but instead combines concepts from various fields like marketing theory, economics, and systems dynamics:
-- The exponential growth model for natural increase is classical in many biological and economic models.
-- The impact of marketing as an additive factor is a straightforward approach often used in preliminary marketing models.
-- The multiplicative effect of a special promotion is also commonly used in models assessing the impact of irregular or one-time events on ongoing processes.
-
-The combination of these elements into a single model for simulating product demand helps in understanding how different factors interact over time to influence the market dynamics of a product. It's a practical approach that allows for adjustments and analysis of individual components like marketing strategies and promotional campaigns. This type of model can be very useful in academic settings or business analytics to forecast product demand under varying scenarios.
+See [Modelling Market Dynamics](./modelling_market_dynamics.md) for more information.

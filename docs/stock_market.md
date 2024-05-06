@@ -75,30 +75,10 @@ Explore basic trading strategies such as "buy and hold", "moving average crossov
   - How do these strategies perform in response to the simulated market events?
 
 
-  ## Model Formulation
+## Model Description
 
-The formula used in the `StockMarketSimulation` class simulates stock price movements by incorporating volatility, a directional trend (drift), and the impact of specific market events. Here’s a detailed explanation of the components of the formula:
+The Stock Market Simulation class focuses on the fluctuations in stock prices influenced by daily volatility, market trends, and specific market events. The simulation adjusts stock prices daily based on:
+- Random daily changes due to volatility and drift.
+- Event impacts that multiplicatively affect the stock prices on designated days.
 
-1. **Volatility and Drift:** Similar to the Resource Fluctuations Simulation, the stock price changes are driven by daily volatility and drift. Each day, the stock price undergoes a random change determined by a normal distribution centered around the `drift` (which can be positive or negative to represent an overall upward or downward trend) and spread according to the `volatility` (which accounts for the unpredictability or risk associated with the stock). This is mathematically modeled as:
-   \[
-   \text{Random Change} = \text{Normal}(\text{Drift}, \text{Volatility})
-   \]
-   The new price for each day is then calculated as:
-   \[
-   \text{New Price} = \text{Previous Price} \times (1 + \text{Random Change})
-   \]
-
-2. **Market Event Impact:** If there is a significant market event planned for a specific day (`event_day`), the stock price is adjusted to reflect the impact of this event using the `event_impact`, which is applied as a multiplicative factor. This adjusts the price in response to the event:
-   \[
-   \text{New Price} = \text{Previous Price} \times (1 + \text{Event Impact})
-   \]
-
-### Relation to Classical Models
-
-The simulation model described in the `StockMarketSimulation` class aligns closely with the principles of the **Geometric Brownian Motion (GBM)** model used in financial mathematics to model the prices of financial instruments like stocks and commodities:
-
-- **Geometric Brownian Motion:** The use of a random change modeled with a normal distribution where the stock price is updated by multiplying the previous price by \(1 + \text{Random Change}\) is characteristic of GBM. In GBM, prices are assumed to follow a log-normal distribution, ensuring that they remain positive and reflect realistic financial scenarios where prices are multiplicative.
-
-- **Event Modeling:** The handling of specific market events by applying a multiplicative impact on the stock price for a particular day resembles a **jump-diffusion model**. This type of model is often used to incorporate sudden, significant changes in price due to external factors (such as corporate news, geopolitical events, etc.), which aren’t captured by the standard GBM.
-
-Overall, the simulation combines elements from established financial models to allow for dynamic and realistic modeling of stock prices, accommodating both the continuous aspect of daily price changes and discrete events that can significantly affect market conditions. This approach is quite common in financial market simulations used for educational purposes, trading strategy development, and risk management.
+See [Modelling Market Dynamics](./modelling_market_dynamics.md) for more information.

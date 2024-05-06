@@ -5,6 +5,7 @@ theme: material
 nav:
   - Home: index.md
   - Getting Started: getting_started.md
+  - MOdelling Market Dynamics: modelling_market_dynamics.md
   - Simulations:
       - Product Popularity: product_popularity.md
       - Stock Market: stock_market.md
@@ -15,6 +16,7 @@ nav:
 
 plugins:
   - search
+  - mkdocs-math
   - mkdocstrings:
       handlers:
         python:

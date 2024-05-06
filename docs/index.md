@@ -22,6 +22,11 @@ The Resource Fluctuations Simulation models the price variability of resources o
 
 - [Learn more about the Resource Fluctuations Simulation](./resource_fluctuations.md)
 
+
+### Modelling Market Dynamics
+
+Each model incorporates different aspects of market behavior and is linked to classical and traditional models in economics and finance.  See [Modelling Market Dynamics](./modelling_market_dynamics.md)
+
 ## Getting Started
 
 To get started with using these simulations, visit our [Getting Started](./getting_started.md) guide which will help you set up and run your first simulations.

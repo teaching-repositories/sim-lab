@@ -72,30 +72,9 @@ Implement simple hedging strategies to see how they could mitigate the risks ass
   - Which hedging strategy appears most effective in stabilising price fluctuations?
   - How do the costs of these strategies compare to their benefits in terms of reduced price volatility?
 
-## Model Formulation
+## Model Description
+The Resource Fluctuations Simulation class is designed to understand the dynamics of resource price changes, incorporating volatility, market trends (drift), and supply disruptions. Key components of the simulation formula include:
+- Daily Price Change: Modeled using a normal distribution influenced by drift and volatility.
+- Supply Disruption: A specific day's price can be significantly altered due to external shocks, modeled as \( \text{Disruption Severity} \).
 
-The formula used in the `ResourceFluctuationsSimulation` class is designed to simulate the fluctuations in resource prices, incorporating daily volatility, a trend or drift over time, and the effects of supply disruptions. Here's a breakdown of how the formula works for each day of the simulation:
-
-1. **Volatility and Drift:** Each day, the price of the resource changes based on a combination of volatility and drift. The volatility represents the day-to-day variability in price changes, while the drift represents a consistent trend in price changes over time. This is modeled using a normal distribution where the mean of the distribution is given by the `drift` and the standard deviation by the `volatility`. This is expressed as:
-   \[
-   \text{Random Change} = \text{Normal}(\text{Drift}, \text{Volatility})
-   \]
-   Then, the new price is calculated as:
-   \[
-   \text{New Price} = \text{Previous Price} \times (1 + \text{Random Change})
-   \]
-
-2. **Supply Disruption:** If there's a day specified for a supply disruption (given by `supply_disruption_day`), the formula adjusts the price of the resource significantly based on the `disruption_severity`. The severity is modeled as a multiplicative factor to the price of the resource:
-   \[
-   \text{New Price} = \text{Previous Price} \times (1 + \text{Disruption Severity})
-   \]
-
-### Relation to Classical Models
-
-The simulation model appears to draw from the classical geometric Brownian motion (GBM) model, which is commonly used in financial mathematics to model stock prices and other financial assets. In GBM, the logarithm of the stock prices follows a Brownian motion (also known as a Wiener process) with drift and volatility, similar to the structure used in this resource simulation class:
-
-- **Geometric Brownian Motion:** The use of `previous_price * (1 + random_change)` closely resembles the discrete approximation of GBM, where price changes are log-normally distributed, allowing the price to stay positive and fluctuate in a realistic manner.
-
-- **Supply Disruption as a Jump Process:** The inclusion of supply disruption as a multiplicative effect on the price for a specific day can be seen as a form of a jump process, where the price can have sudden, significant changes due to external events. This is similar to models used in energy markets and commodities trading, where sudden events can cause significant price changes.
-
-Overall, while the exact parameters and implementation details might differ based on the simulation's objectives and the specific market being modeled, the underlying principles of the formula are well-established in the field of quantitative finance and economic modeling.
+See [Modelling Market Dynamics](./modelling_market_dynamics.md) for more information.
