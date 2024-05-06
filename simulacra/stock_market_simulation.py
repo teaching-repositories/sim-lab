@@ -53,8 +53,8 @@ class StockMarketSimulation:
         Returns:
             List[float]: A list containing the stock prices for each day of the simulation.
         """
-        if random_seed is not None:
-            np.random.seed(random_seed)
+        if self.random_seed is not None:
+            np.random.seed(self.random_seed)
  
         prices = [self.start_price]
         for day in range(1, self.days):

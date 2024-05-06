@@ -52,9 +52,9 @@ class ProductPopularitySimulation:
         Returns:
             List[int]: A list containing the demand for the product for each day of the simulation.
         """
-        if random_seed is not None:
-            np.random.seed(random_seed)
-            
+        if self.random_seed is not None:
+            np.random.seed(self.random_seed)
+
         demand = [self.start_demand]
         for day in range(1, self.days):
             previous_demand = demand[-1]
