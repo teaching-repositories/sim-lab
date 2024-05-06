@@ -1,15 +1,15 @@
 site_name: Simulacra Documentation
 
-theme: readthedocs
+theme: material
 
 nav:
   - Home: index.md
-  - API Documentation: api.md
+  - Getting Started: getting_started.md
   - Simulations:
       - Product Popularity: product_popularity.md
       - Stock Market: stock_market.md
       - Resource Fluctuations: resource_fluctuations.md
-  - Getting Started: getting_started.md
+  - API Documentation: api.md
   - Contribute: contribute.md
   - Contact: contact.md
 
