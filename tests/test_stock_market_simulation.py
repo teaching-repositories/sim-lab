@@ -1,5 +1,5 @@
 import pytest
-from simulacra.StockMarketSimulation import StockMarketSimulation
+from simulacra import StockMarketSimulation
 
 
 def test_initialization():
