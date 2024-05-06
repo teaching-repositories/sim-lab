@@ -2,5 +2,5 @@
 
 ## Product Popularity Simulation Class
 
-::: simculacra.ProductPopularitySimulation
+::: simulacra.ProductPopularitySimulation
 
