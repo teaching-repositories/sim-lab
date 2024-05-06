@@ -67,5 +67,5 @@ class ProductPopularitySimulation:
                 new_demand = (natural_growth + marketing_influence) * (1 + self.promotion_effectiveness)
 
             demand.append(new_demand)
-            
+
         return demand
