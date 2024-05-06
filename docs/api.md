@@ -3,4 +3,3 @@
 ## Product Popularity Simulation Class
 
 ::: simulacra.ProductPopularitySimulation
-
