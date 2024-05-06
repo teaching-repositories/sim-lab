@@ -4,10 +4,10 @@
 
 ::: simulacra.ProductPopularitySimulation
 
-# Resource Fluctuation Simulation Class
+## Resource Fluctuation Simulation Class
 
 ::: simulacra.ResourceFluctuationsSimulation
 
-# Stock Market Simulation Class
+## Stock Market Simulation Class
 
 ::: simulacra.StockMarketSimulation
