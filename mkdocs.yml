@@ -16,9 +16,19 @@ nav:
 
 plugins:
   - search
-  - mkdocs-math
   - mkdocstrings:
       handlers:
         python:
           rendering:
             show_source: true
+
+document$.subscribe(({ body }) => { 
+  renderMathInElement(body, {
+    delimiters: [
+      { left: "$$",  right: "$$",  display: true },
+      { left: "$",   right: "$",   display: false },
+      { left: "\\(", right: "\\)", display: false },
+      { left: "\\[", right: "\\]", display: true }
+    ],
+  })
+})
