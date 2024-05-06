@@ -48,7 +48,7 @@ def test_supply_disruption_effect():
     no_disruption_price = prices[179]  # The price the day before the disruption
     disruption_price = prices[180]  # The price on the disruption day
     expected_disruption = no_disruption_price * (1 + sim.disruption_severity)
-    assert disruption_price == pytest.approx(expected_increase)
+    assert disruption_price == pytest.approx(expected_disruption)
 
 
 # Additional tests could include:
