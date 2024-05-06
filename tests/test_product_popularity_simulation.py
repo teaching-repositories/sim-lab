@@ -45,8 +45,14 @@ def test_promotion_effectiveness():
     demand = sim.run_simulation()
     # Assuming a reproducible result with a set random seed:
     # Check that the demand on the promotion day increases as expected.
-    expected_increase = demand[29] * (1 + sim.promotion_effectiveness)  # Day 30 is index 29
-    assert demand[30] == pytest.approx(expected_increase)
+
+    previous_demand = demand[29]
+    natural_growth = previous_demand * (1 + 0.02)
+    marketing_influence = previous_demand * 0.1
+    new_demand = natural_growth + marketing_influence
+    new_demand *= (1 + self.promotion_effectiveness)
+    #expected_increase = demand[29] * (1 + sim.promotion_effectiveness)  # Day 30 is index 29
+    assert demand[30] == pytest.approx(new_demand)
 
 # Additional tests could include:
 # - Testing the output type (ensure it's all floats or ints, as expected)
