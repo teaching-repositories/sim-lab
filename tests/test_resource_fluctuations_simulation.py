@@ -18,7 +18,7 @@ def test_initialization():
 
 def test_run_simulation_output_length():
     """Test that the simulation returns the correct number of price points."""
-    sim = ResourceSimulation(
+    sim = ResourceFl;uctuationsSimulation(
         start_price=100, days=365, volatility=0.01, drift=0.0001, random_seed=42
     )
     prices = sim.run_simulation()
@@ -26,17 +26,16 @@ def test_run_simulation_output_length():
 
 def test_run_simulation_reproducibility():
     """Test that the simulation results are reproducible with the same random seed."""
-    sim1 = ResourceSimulation(
+    sim1 = ResourceFluctuationsSimulation(
         start_price=100, days=365, volatility=0.01, drift=0.0001, random_seed=42
     )
-    sim2 = ResourceSimulation(
+    sim2 = ResourceFluctuationsSimulation(
         start_price=100, days=365, volatility=0.01, drift=0.0001, random_seed=42
     )
     prices1 = sim1.run_simulation()
     prices2 = sim2.run_simulation()
     assert prices1 == prices2
 
-'''
 def test_supply_disruption_effect():
     """Test the effect of a supply disruption on the specified day."""
     sim = ResourceSimulation(
@@ -50,7 +49,7 @@ def test_supply_disruption_effect():
     disruption_price = prices[180]  # The price on the disruption day
     expected_increase = no_disruption_price * (1 + sim.disruption_severity)
     assert disruption_price == pytest.approx(expected_increase)
-'''
+
 
 # Additional tests could include:
 # - Testing the output type (ensure it's all floats or ints, as expected)
