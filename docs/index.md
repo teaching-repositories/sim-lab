@@ -1,17 +1,35 @@
-# Welcome to MkDocs
+# Welcome to the Simulation Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to our comprehensive documentation for the Simulation Framework. This framework includes several simulation models that are designed to demonstrate and analyze various phenomena in business and economics. Here, you will find detailed information on the workings and usage of each simulation model.
 
-## Commands
+## Simulation Models
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+### Product Popularity Simulation
 
-## Project layout
+The Product Popularity Simulation models the dynamics of product demand over time, considering factors like natural growth, marketing impact, and promotional campaigns.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- [Learn more about the Product Popularity Simulation](./product_popularity.md)
+
+### Stock Market Simulation
+
+The Stock Market Simulation provides a framework for modeling and predicting stock price movements based on various economic and psychological factors.
+
+- [Learn more about the Stock Market Simulation](./stock_market.md)
+
+### Resource Fluctuations Simulation
+
+The Resource Fluctuations Simulation models the price variability of resources over time, factoring in elements like market volatility, economic drift, and external disruptions.
+
+- [Learn more about the Resource Fluctuations Simulation](./resource_fluctuations.md)
+
+## Getting Started
+
+To get started with using these simulations, visit our [Getting Started](./getting_started.md) guide which will help you set up and run your first simulations.
+
+## Contribute
+
+Interested in contributing to the Simulation Framework? Check out our [Contribution Guidelines](./contribute.md) for more information on how you can help improve these simulations.
+
+## Contact
+
+If you have any questions or feedback, please don't hesitate to [Contact Us](./contact.md).
