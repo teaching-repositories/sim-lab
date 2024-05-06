@@ -21,7 +21,7 @@ class ProductPopularitySimulation:
     """
 
     def __init__(
-        self, start_demand: int, days: int, growth_rate: float, marketing_impact: float,
+        self, start_demand: float, days: int, growth_rate: float, marketing_impact: float,
         promotion_day: Optional[int] = None, promotion_effectiveness: float = 0,
         random_seed: Optional[int] = None
     ) -> None:
