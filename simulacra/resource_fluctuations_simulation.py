@@ -56,7 +56,7 @@ class ResourceFluctuationsSimulation:
             new_price = previous_price * (1 + random_change)
 
             if day == self.supply_disruption_day:
-                new_price *= (1 + self.disruption_severity)
+                new_price = previous_price * (1 + self.disruption_severity)
 
             prices.append(new_price)
 
