@@ -44,8 +44,6 @@ class ProductPopularitySimulation:
         self.promotion_day = promotion_day
         self.promotion_effectiveness = promotion_effectiveness
         self.random_seed = random_seed
-        if random_seed is not None:
-            np.random.seed(random_seed)
 
     def run_simulation(self) -> List[float]:
         """
@@ -54,6 +52,9 @@ class ProductPopularitySimulation:
         Returns:
             List[int]: A list containing the demand for the product for each day of the simulation.
         """
+        if random_seed is not None:
+            np.random.seed(random_seed)
+            
         demand = [self.start_demand]
         for day in range(1, self.days):
             previous_demand = demand[-1]

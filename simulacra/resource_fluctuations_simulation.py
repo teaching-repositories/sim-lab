@@ -38,8 +38,6 @@ class ResourceFluctuationsSimulation:
         self.supply_disruption_day = supply_disruption_day
         self.disruption_severity = disruption_severity
         self.random_seed = random_seed
-        if random_seed is not None:
-            np.random.seed(random_seed)
 
     def run_simulation(self) -> List[float]:
         """
@@ -48,6 +46,9 @@ class ResourceFluctuationsSimulation:
         Returns:
             List[float]: A list containing the price of the resource for each day of the simulation.
         """
+        if self.random_seed is not None:
+            np.random.seed(self.random_seed)
+
         prices = [self.start_price]
         for day in range(1, self.days):
             previous_price = prices[-1]
