@@ -62,7 +62,7 @@ class StockMarketSimulation:
             new_price = previous_price * (1 + random_change)
 
             if day == self.event_day:
-                new_price *= (1 + self.event_impact)
+                new_price = previous_price * (1 + self.event_impact)
 
             prices.append(new_price)
 

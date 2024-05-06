@@ -36,7 +36,6 @@ def test_run_simulation_reproducibility():
     prices2 = sim2.run_simulation()
     assert prices1 == prices2
 
-'''
 def test_event_impact():
     """Test the effect of a market event on the specified day."""
     sim = StockMarketSimulation(
@@ -46,9 +45,9 @@ def test_event_impact():
     prices = sim.run_simulation()
     # Assuming a reproducible result with a set random seed:
     # Check that the price on the event day is impacted as expected.
-    expected_drop = prices[179] * (1 - 0.1)  # Expecting a 10% drop
-    assert prices[180] == pytest.approx(expected_drop)
-'''
+    expected_impact = prices[179] * (1 - 0.1)  # Expecting a 10% drop
+    assert prices[180] == pytest.approx(expected_impact)
+
 # Additional tests could include:
 # - Testing the output type (ensure it's all floats or ints, as expected)
 # - Testing edge cases like zero or negative values for parameters

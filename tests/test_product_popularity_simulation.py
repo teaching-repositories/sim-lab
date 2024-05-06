@@ -36,7 +36,6 @@ def test_run_simulation_reproducibility():
     demand2 = sim2.run_simulation()
     assert demand1 == demand2
 
-'''
 def test_promotion_effectiveness():
     """Test the effect of a promotional campaign on the specified day."""
     sim = ProductPopularitySimulation(
@@ -48,7 +47,6 @@ def test_promotion_effectiveness():
     # Check that the demand on the promotion day increases as expected.
     expected_increase = demand[29] * (1 + sim.promotion_effectiveness)  # Day 30 is index 29
     assert demand[30] == pytest.approx(expected_increase)
-'''
 
 # Additional tests could include:
 # - Testing the output type (ensure it's all floats or ints, as expected)
