@@ -44,7 +44,6 @@ class StockMarketSimulation:
         self.event_day = event_day
         self.event_impact = event_impact
         self.random_seed = random_seed
-        
 
     def run_simulation(self) -> List[float]:
         """
@@ -55,7 +54,7 @@ class StockMarketSimulation:
         """
         if self.random_seed is not None:
             np.random.seed(self.random_seed)
- 
+
         prices = [self.start_price]
         for day in range(1, self.days):
             previous_price = prices[-1]
