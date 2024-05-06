@@ -64,8 +64,8 @@ class ProductPopularitySimulation:
             new_demand = natural_growth + marketing_influence
 
             if day == self.promotion_day:
-                new_demand *= (1 + self.promotion_effectiveness)
+                new_demand = (natural_growth + marketing_influence) * (1 + self.promotion_effectiveness)
 
             demand.append(new_demand)
-
+            
         return demand
