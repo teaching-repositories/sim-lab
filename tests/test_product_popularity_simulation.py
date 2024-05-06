@@ -50,7 +50,7 @@ def test_promotion_effectiveness():
     natural_growth = previous_demand * (1 + 0.02)
     marketing_influence = previous_demand * 0.1
     new_demand = natural_growth + marketing_influence
-    new_demand *= (1 + self.promotion_effectiveness)
+    new_demand *= (1 + 0.05)
     #expected_increase = demand[29] * (1 + sim.promotion_effectiveness)  # Day 30 is index 29
     assert demand[30] == pytest.approx(new_demand)
 
