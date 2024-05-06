@@ -18,7 +18,7 @@ def test_initialization():
 
 def test_run_simulation_output_length():
     """Test that the simulation returns the correct number of price points."""
-    sim = ResourceFl;uctuationsSimulation(
+    sim = ResourceFluctuationsSimulation(
         start_price=100, days=365, volatility=0.01, drift=0.0001, random_seed=42
     )
     prices = sim.run_simulation()
@@ -38,7 +38,7 @@ def test_run_simulation_reproducibility():
 
 def test_supply_disruption_effect():
     """Test the effect of a supply disruption on the specified day."""
-    sim = ResourceSimulation(
+    sim = ResourceFluctuationsSimulation(
         start_price=100, days=365, volatility=0.01, drift=0.0001,
         supply_disruption_day=180, disruption_severity=0.1, random_seed=42
     )
