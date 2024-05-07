@@ -1,12 +1,8 @@
-# Modeling Market Dynamics: Comparative Analysis of Simulation Models for Product Popularity, Stock Market, and Resource Fluctuations
+# Modeling Market Dynamics
 
-## Introduction
+This document provides a detailed overview and comparative analysis of the simulation models developed for understanding the dynamics of product popularity, stock market, and resource price fluctuations. Each model incorporates different aspects of market behavior and is loosley linked to traditional models in economics and finance.
 
-This document provides a detailed overview and comparative analysis of the simulation models developed for understanding the dynamics of product popularity, stock market fluctuations, and resource price changes. Each model incorporates different aspects of market behavior and is linked to classical and traditional models in economics and finance.
-
-## Product Popularity Simulation:
-
-### Model Description
+## Product Popularity
 
 The formula used in the `ProductPopularitySimulation` class for simulating product demand appears to incorporate several key factors: natural growth, marketing impact, and promotional campaigns. Here's a breakdown of how the formula works for each day of the simulation:
 
@@ -45,9 +41,7 @@ The model presented in the `ProductPopularitySimulation` class is not based dire
 
 The combination of these elements into a single model for simulating product demand helps in understanding how different factors interact over time to influence the market dynamics of a product. It's a practical approach that allows for adjustments and analysis of individual components like marketing strategies and promotional campaigns. This type of model can be very useful in academic settings or business analytics to forecast product demand under varying scenarios.
 
-## Resource Fluctuations Simulation
-
-### Model Description
+## Resource Fluctuations
 
 The formula used in the `ResourceFluctuationsSimulation` class is designed to simulate the fluctuations in resource prices, incorporating daily volatility, a trend or drift over time, and the effects of supply disruptions. Here's a breakdown of how the formula works for each day of the simulation:
 
@@ -79,9 +73,7 @@ The simulation model appears to draw from the classical geometric Brownian motio
 
 Overall, while the exact parameters and implementation details might differ based on the simulation's objectives and the specific market being modeled, the underlying principles of the formula are well-established in the field of quantitative finance and economic modeling.
 
-## Stock Market Simulation
-
-### Model Description
+## Stock Market
 
 The formula used in the `StockMarketSimulation` class simulates stock price movements by incorporating volatility, a directional trend (drift), and the impact of specific market events. Here’s a detailed explanation of the components of the formula:
 

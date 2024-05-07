@@ -49,7 +49,7 @@ Experiment! Use the simulation to explore and test various scenarios. Adjust par
 - **Comparative Analysis**: Conduct side-by-side comparisons of scenarios with different levels of volatility or different strategies to visually assess their impact. This can make it easier to understand which conditions or strategies lead to the most favorable outcomes.  Consider calculating and comparing statistics such as the average price before and after a disruption event to quantify its impact.
 
 
-## Task Specific Guidance
+## Use Case Ideas
 
 ### Assess the Impact of Volatility on Price Stability:
 
@@ -65,7 +65,7 @@ Set up scenarios where a supply disruption occurs at a predetermined day. Change
   - How does the timing of a supply disruption affect its impact on resource prices?
   - Compare the prices before and after the disruption. What can you infer about the resilience of the market to sudden changes?
 
-### (Optional) Explore Hedging Strategies
+### Explore Hedging Strategies
 
 Implement simple hedging strategies to see how they could mitigate the risks associated with price volatility and supply disruptions. Consider strategies like futures contracts or options.Questions to Consider:
 
@@ -73,7 +73,9 @@ Implement simple hedging strategies to see how they could mitigate the risks ass
   - How do the costs of these strategies compare to their benefits in terms of reduced price volatility?
 
 ## Model Description
+
 The Resource Fluctuations Simulation class is designed to understand the dynamics of resource price changes, incorporating volatility, market trends (drift), and supply disruptions. Key components of the simulation formula include:
+
 - Daily Price Change: Modeled using a normal distribution influenced by drift and volatility.
 - Supply Disruption: A specific day's price can be significantly altered due to external shocks, modeled as \( \text{Disruption Severity} \).
 

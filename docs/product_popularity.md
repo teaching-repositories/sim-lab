@@ -49,7 +49,7 @@ Experiment! Use the simulation to explore and test various scenarios. Adjust par
 - **Comparative Analysis**: Run multiple scenarios side-by-side to directly compare different growth rates, marketing impacts, or strategies. This comparison can make it easier to visualize which scenarios are most effective. Consider calculating and comparing statistics such as the average price before and after a disruption event to quantify its impact.
 
 
-## Task-Specific Guidance
+## Use Case Ideas
 
 ### Examine How Changes in Growth Rate and Marketing Impact Affect Demand
 
@@ -67,7 +67,7 @@ Set up a scenario where a marketing campaign kicks in at a specific day. Vary th
 
   - Compare the demand before and after the promotion day. What insights can you gain about the campaign’s impact?
 
-### (Optional) Explore Different Marketing Strategies and Their Cost-Effectiveness**
+### Explore Different Marketing Strategies and Their Cost-Effectiveness
 
 Implement various hypothetical marketing strategies with assumed costs and effectiveness. Calculate the return on investment (ROI) for each strategy based on the increase in demand they generate versus their costs. Questions to Consider:
 
@@ -78,6 +78,7 @@ Implement various hypothetical marketing strategies with assumed costs and effec
 ## Model Description
 
 The Product Popularity Simulation class models the demand for a product over time, considering factors such as natural growth, marketing impact, and promotional campaigns. The simulation formula includes:
+
 - Natural Growth: \( \text{Natural Growth} = \text{Previous Demand} \times (1 + \text{Growth Rate}) \)
 - Marketing Influence: \( \text{Marketing Influence} = \text{Previous Demand} \times \text{Marketing Impact} \)
 - Promotional Impact: On promotional days, the demand is further adjusted by a factor of \( \text{Promotion Effectiveness} \).

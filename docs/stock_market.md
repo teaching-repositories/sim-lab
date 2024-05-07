@@ -48,7 +48,7 @@ Experiment! Use the simulation to explore and test various scenarios. Adjust par
 
 - **Comparative Analysis**: Conduct side-by-side comparisons of scenarios with different levels of volatility or different strategies to visually assess their impact. This can make it easier to understand which conditions or strategies lead to the most favorable outcomes.  Consider calculating and comparing statistics such as the average price before and after a disruption event to quantify its impact.
 
-## Task-Specific Guidance
+## Use Case Ideas
 
 ### Investigate How Volatility Affects Stock Price Stability
 
@@ -66,7 +66,7 @@ Set up scenarios where a significant market event affects stock prices on a spec
 
   - Analyse the recovery or further decline in stock prices following the event. What does this tell you about market sentiment and investor behavior?
 
-### (Optional) Develop and Test Trading Strategies
+### Develop and Test Trading Strategies
 
 Explore basic trading strategies such as "buy and hold", "moving average crossover", or "momentum-based" strategies. Implement these strategies in your simulation to test their effectiveness over time. Questions to Consider:
 
@@ -78,6 +78,7 @@ Explore basic trading strategies such as "buy and hold", "moving average crossov
 ## Model Description
 
 The Stock Market Simulation class focuses on the fluctuations in stock prices influenced by daily volatility, market trends, and specific market events. The simulation adjusts stock prices daily based on:
+
 - Random daily changes due to volatility and drift.
 - Event impacts that multiplicatively affect the stock prices on designated days.
 

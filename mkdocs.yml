@@ -1,7 +1,7 @@
 site_name: Simulacra Documentation
 
 theme:
-  name: material
+  name: readthedocs
 
 markdown_extensions:
   - pymdownx.arithmatex:

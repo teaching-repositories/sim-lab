@@ -31,7 +31,7 @@ This command should print the version number of the Simulacra package if it has 
 Once Simulacra is installed, you can start simulating right away. Here’s a quick example on how to simulate product popularity:
 
 ```python
-from simulacra.product_popularity import ProductPopularitySimulation
+from simulacra import ProductPopularitySimulation
 
 # Create a simulation instance
 sim = ProductPopularitySimulation(
