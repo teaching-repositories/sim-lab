@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Stock Market - Simulacra Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Stock Market";
+        var mkdocs_page_input_path = "stock_market.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Simulacra Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../modelling_market_dynamics/">Modelling Market Dynamics</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Simulations</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../product_popularity/">Product Popularity</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Stock Market</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conducting-visual-analysis-using-the-simulation">Conducting Visual Analysis Using the Simulation:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-case-ideas">Use Case Ideas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#investigate-how-volatility-affects-stock-price-stability">Investigate How Volatility Affects Stock Price Stability</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#simulate-a-major-market-event-and-analyse-its-impact">Simulate a Major Market Event and Analyse Its Impact</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#develop-and-test-trading-strategies">Develop and Test Trading Strategies</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#model-description">Model Description</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../resource_fluctuations/">Resource Fluctuations</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../api/">API Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contribute/">Contribute</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contact/">Contact</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Simulacra Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Simulations</li>
+      <li class="breadcrumb-item active">Stock Market</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="stock-market-simulation">Stock Market Simulation</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This simulation models the fluctuations of stock prices, enabling students to explore financial market dynamics and develop basic trading strategies. It serves as a practical tool for understanding the principles of market speculation and risk management.</p>
+<h2 id="parameters">Parameters</h2>
+<ul>
+<li><code>start_price</code>: The initial price of the stock.</li>
+<li><code>days</code>: The duration of the simulation.</li>
+<li><code>volatility</code>: The measure of price fluctuations, indicating how much the price can vary day-to-day.</li>
+<li><code>drift</code>: Represents the overall trend in stock prices, whether upward or downward.</li>
+<li><code>event_day</code>: Specifies the day on which a major market event occurs (optional).</li>
+<li><code>event_impact</code>: The magnitude of the event’s impact on stock prices, positive for beneficial events and negative for detrimental ones.</li>
+</ul>
+<p><strong>Example Code</strong></p>
+<pre><code class="language-python">from simulacra import StockMarketSimulation
+import matplotlib.pyplot as plt
+
+# Example scenario: High volatility with a downward price trend and a significant market event.
+sim = StockMarketSimulation(start_price=100, days=365, volatility=0.03, 
+                            drift=-0.001, event_day=100, event_impact=-0.2)
+
+prices = sim.run_simulation()
+
+# Visualising the stock market fluctuations
+plt.figure(figsise=(10, 6))
+plt.plot(prices, label='Stock Price')
+plt.axvline(x=sim.event_day, color='red', linestyle='--', label='Major Market Event')
+plt.xlabel('Days')
+plt.ylabel('Price ($)')
+plt.title('Stock Market Simulation')
+plt.legend()
+plt.show()
+</code></pre>
+<h2 id="conducting-visual-analysis-using-the-simulation">Conducting Visual Analysis Using the Simulation:</h2>
+<p>Experiment! Use the simulation to explore and test various scenarios. Adjust parameters, try different strategies, and analyse the outcomes to gain deeper insights into resource management under fluctuating conditions.</p>
+<ul>
+<li>
+<p><strong>Baseline Scenario Without Disruptions</strong>: Begin by simulating the price path without any disruptions to establish a baseline for comparison with more complex scenarios.</p>
+</li>
+<li>
+<p><strong>Labeling and Annotations</strong>: Ensure that your plots clearly show the days on the x-axis and price on the y-axis. Use lines or markers to indicate the day of the event or the implementation of a trading strategy.</p>
+</li>
+<li>
+<p><strong>Interactive Exploration</strong>: If tools are available, adjust parameters such as volatility and drift dynamically to observe how these changes affect the price simulation. This can help in understanding the immediate effects of each parameter.</p>
+</li>
+<li>
+<p><strong>Comparative Analysis</strong>: Conduct side-by-side comparisons of scenarios with different levels of volatility or different strategies to visually assess their impact. This can make it easier to understand which conditions or strategies lead to the most favorable outcomes.  Consider calculating and comparing statistics such as the average price before and after a disruption event to quantify its impact.</p>
+</li>
+</ul>
+<h2 id="use-case-ideas">Use Case Ideas</h2>
+<h3 id="investigate-how-volatility-affects-stock-price-stability">Investigate How Volatility Affects Stock Price Stability</h3>
+<p>Begin by analysing how different levels of volatility impact the stability of stock prices and the potential for investment gains or losses. Questions to Consider:</p>
+<ul>
+<li>
+<p>How do changes in volatility affect the frequency and magnitude of price swings?</p>
+</li>
+<li>
+<p>What implications does increased volatility have on the risk and potential returns of stock investments?</p>
+</li>
+</ul>
+<h3 id="simulate-a-major-market-event-and-analyse-its-impact">Simulate a Major Market Event and Analyse Its Impact</h3>
+<p>Set up scenarios where a significant market event affects stock prices on a specific day. Adjust the impact of these events to observe varying outcomes. Questions to Consider:</p>
+<ul>
+<li>
+<p>How does the market respond to positive versus negative events?</p>
+</li>
+<li>
+<p>Analyse the recovery or further decline in stock prices following the event. What does this tell you about market sentiment and investor behavior?</p>
+</li>
+</ul>
+<h3 id="develop-and-test-trading-strategies">Develop and Test Trading Strategies</h3>
+<p>Explore basic trading strategies such as "buy and hold", "moving average crossover", or "momentum-based" strategies. Implement these strategies in your simulation to test their effectiveness over time. Questions to Consider:</p>
+<ul>
+<li>
+<p>Which strategy performs best under stable versus volatile market conditions?</p>
+</li>
+<li>
+<p>How do these strategies perform in response to the simulated market events?</p>
+</li>
+</ul>
+<h2 id="model-description">Model Description</h2>
+<p>The Stock Market Simulation class focuses on the fluctuations in stock prices influenced by daily volatility, market trends, and specific market events. The simulation adjusts stock prices daily based on:</p>
+<ul>
+<li>Random daily changes due to volatility and drift.</li>
+<li>Event impacts that multiplicatively affect the stock prices on designated days.</li>
+</ul>
+<p>See <a href="../modelling_market_dynamics/">Modelling Market Dynamics</a> for more information.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../product_popularity/" class="btn btn-neutral float-left" title="Product Popularity"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../resource_fluctuations/" class="btn btn-neutral float-right" title="Resource Fluctuations">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../product_popularity/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../resource_fluctuations/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

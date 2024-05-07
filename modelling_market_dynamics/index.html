@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Modelling Market Dynamics - Simulacra Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Modelling Market Dynamics";
+        var mkdocs_page_input_path = "modelling_market_dynamics.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Simulacra Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Modelling Market Dynamics</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#product-popularity">Product Popularity</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#relation-to-classical-models">Relation to Classical Models</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resource-fluctuations">Resource Fluctuations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#relation-to-classical-models_1">Relation to Classical Models</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#stock-market">Stock Market</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#relation-to-classical-models_2">Relation to Classical Models</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Simulations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../product_popularity/">Product Popularity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../stock_market/">Stock Market</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../resource_fluctuations/">Resource Fluctuations</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../api/">API Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contribute/">Contribute</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contact/">Contact</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Simulacra Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Modelling Market Dynamics</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="modeling-market-dynamics">Modeling Market Dynamics</h1>
+<p>This document provides a detailed overview and comparative analysis of the simulation models developed for understanding the dynamics of product popularity, stock market, and resource price fluctuations. Each model incorporates different aspects of market behavior and is loosley linked to traditional models in economics and finance.</p>
+<h2 id="product-popularity">Product Popularity</h2>
+<p>The formula used in the <code>ProductPopularitySimulation</code> class for simulating product demand appears to incorporate several key factors: natural growth, marketing impact, and promotional campaigns. Here's a breakdown of how the formula works for each day of the simulation:</p>
+<ol>
+<li><strong>Natural Growth:</strong> The natural growth of the product's demand is modeled as a simple exponential growth, which is a common model in population dynamics and economics. Each day, the demand increases by a percentage defined by the <code>growth_rate</code> attribute. The formula for this part is:</li>
+</ol>
+<div class="arithmatex">\[
+\text{Natural Growth} = \text{Previous Demand} \times (1 + \text{Growth Rate})
+\]</div>
+<ol>
+<li><strong>Marketing Impact:</strong> On top of the natural growth, the formula also includes a daily impact from ongoing marketing efforts. This impact is additive and is calculated as a percentage of the previous day's demand, determined by the <code>marketing_impact</code> attribute:</li>
+</ol>
+<div class="arithmatex">\[
+\text{Marketing Influence} = \text{Previous Demand} \times \text{Marketing Impact}
+\]</div>
+<ol>
+<li><strong>Promotional Campaign:</strong> If a promotional campaign occurs on a specific day (defined by <code>promotion_day</code>), the demand for that day is further increased by a factor of <code>promotion_effectiveness</code>. This is modeled as a multiplicative boost to the demand calculated from natural growth and marketing influence:</li>
+</ol>
+<div class="arithmatex">\[
+\text{New Demand} = (\text{Natural Growth} + \text{Marketing Influence}) \times (1 + \text{Promotion Effectiveness})
+\]</div>
+<p>The overall formula for days without a promotional campaign is:</p>
+<div class="arithmatex">\[
+\text{New Demand} = \text{Natural Growth} + \text{Marketing Influence}
+\]</div>
+<p>For the day with the promotional campaign, the formula changes as mentioned above.</p>
+<h3 id="relation-to-classical-models">Relation to Classical Models</h3>
+<p>The model presented in the <code>ProductPopularitySimulation</code> class is not based directly on any classical single formula but instead combines concepts from various fields like marketing theory, economics, and systems dynamics:
+- The exponential growth model for natural increase is classical in many biological and economic models.
+- The impact of marketing as an additive factor is a straightforward approach often used in preliminary marketing models.
+- The multiplicative effect of a special promotion is also commonly used in models assessing the impact of irregular or one-time events on ongoing processes.</p>
+<p>The combination of these elements into a single model for simulating product demand helps in understanding how different factors interact over time to influence the market dynamics of a product. It's a practical approach that allows for adjustments and analysis of individual components like marketing strategies and promotional campaigns. This type of model can be very useful in academic settings or business analytics to forecast product demand under varying scenarios.</p>
+<h2 id="resource-fluctuations">Resource Fluctuations</h2>
+<p>The formula used in the <code>ResourceFluctuationsSimulation</code> class is designed to simulate the fluctuations in resource prices, incorporating daily volatility, a trend or drift over time, and the effects of supply disruptions. Here's a breakdown of how the formula works for each day of the simulation:</p>
+<ol>
+<li><strong>Volatility and Drift:</strong> Each day, the price of the resource changes based on a combination of volatility and drift. The volatility represents the day-to-day variability in price changes, while the drift represents a consistent trend in price changes over time. This is modeled using a normal distribution where the mean of the distribution is given by the <code>drift</code> and the standard deviation by the <code>volatility</code>. This is expressed as:</li>
+</ol>
+<div class="arithmatex">\[
+\text{Random Change} = \text{Normal}(\text{Drift}, \text{Volatility})
+\]</div>
+<p>Then, the new price is calculated as:</p>
+<div class="arithmatex">\[
+\text{New Price} = \text{Previous Price} \times (1 + \text{Random Change})
+\]</div>
+<ol>
+<li><strong>Supply Disruption:</strong> If there's a day specified for a supply disruption (given by <code>supply_disruption_day</code>), the formula adjusts the price of the resource significantly based on the <code>disruption_severity</code>. The severity is modeled as a multiplicative factor to the price of the resource:</li>
+</ol>
+<div class="arithmatex">\[
+\text{New Price} = \text{Previous Price} \times (1 + \text{Disruption Severity})
+\]</div>
+<h3 id="relation-to-classical-models_1">Relation to Classical Models</h3>
+<p>The simulation model appears to draw from the classical geometric Brownian motion (GBM) model, which is commonly used in financial mathematics to model stock prices and other financial assets. In GBM, the logarithm of the stock prices follows a Brownian motion (also known as a Wiener process) with drift and volatility, similar to the structure used in this resource simulation class:</p>
+<ul>
+<li>
+<p><strong>Geometric Brownian Motion:</strong> The use of <code>previous_price * (1 + random_change)</code> closely resembles the discrete approximation of GBM, where price changes are log-normally distributed, allowing the price to stay positive and fluctuate in a realistic manner.</p>
+</li>
+<li>
+<p><strong>Supply Disruption as a Jump Process:</strong> The inclusion of supply disruption as a multiplicative effect on the price for a specific day can be seen as a form of a jump process, where the price can have sudden, significant changes due to external events. This is similar to models used in energy markets and commodities trading, where sudden events can cause significant price changes.</p>
+</li>
+</ul>
+<p>Overall, while the exact parameters and implementation details might differ based on the simulation's objectives and the specific market being modeled, the underlying principles of the formula are well-established in the field of quantitative finance and economic modeling.</p>
+<h2 id="stock-market">Stock Market</h2>
+<p>The formula used in the <code>StockMarketSimulation</code> class simulates stock price movements by incorporating volatility, a directional trend (drift), and the impact of specific market events. Here’s a detailed explanation of the components of the formula:</p>
+<ol>
+<li><strong>Volatility and Drift:</strong> Similar to the Resource Fluctuations Simulation, the stock price changes are driven by daily volatility and drift. Each day, the stock price undergoes a random change determined by a normal distribution centered around the <code>drift</code> (which can be positive or negative to represent an overall upward or downward trend) and spread according to the <code>volatility</code> (which accounts for the unpredictability or risk associated with the stock). This is mathematically modeled as:</li>
+</ol>
+<div class="arithmatex">\[
+\text{Random Change} = \text{Normal}(\text{Drift}, \text{Volatility})
+\]</div>
+<p>The new price for each day is then calculated as:</p>
+<div class="arithmatex">\[
+\text{New Price} = \text{Previous Price} \times (1 + \text{Random Change})
+\]</div>
+<ol>
+<li><strong>Market Event Impact:</strong> If there is a significant market event planned for a specific day (<code>event_day</code>), the stock price is adjusted to reflect the impact of this event using the <code>event_impact</code>, which is applied as a multiplicative factor. This adjusts the price in response to the event:</li>
+</ol>
+<div class="arithmatex">\[
+\text{New Price} = \text{Previous Price} \times (1 + \text{Event Impact})
+\]</div>
+<h3 id="relation-to-classical-models_2">Relation to Classical Models</h3>
+<p>The simulation model described in the <code>StockMarketSimulation</code> class aligns closely with the principles of the <strong>Geometric Brownian Motion (GBM)</strong> model used in financial mathematics to model the prices of financial instruments like stocks and commodities:</p>
+<ul>
+<li>
+<p><strong>Geometric Brownian Motion:</strong> The use of a random change modeled with a normal distribution where the stock price is updated by multiplying the previous price by <span class="arithmatex">\((1 + \text{Random Change})\)</span> is characteristic of GBM. In GBM, prices are assumed to follow a log-normal distribution, ensuring that they remain positive and reflect realistic financial scenarios where prices are multiplicative.</p>
+</li>
+<li>
+<p><strong>Event Modeling:</strong> The handling of specific market events by applying a multiplicative impact on the stock price for a particular day resembles a <strong>jump-diffusion model</strong>. This type of model is often used to incorporate sudden, significant changes in price due to external factors (such as corporate news, geopolitical events, etc.), which aren’t captured by the standard GBM.</p>
+</li>
+</ul>
+<p>Overall, the simulation combines elements from established financial models to allow for dynamic and realistic modeling of stock prices, accommodating both the continuous aspect of daily price changes and discrete events that can significantly affect market conditions. This approach is quite common in financial market simulations used for educational purposes, trading strategy development, and risk management.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The simulation models developed for analyzing product popularity, resource fluctuations, and stock market dynamics provide valuable insights into the complex interactions within markets. By relating these models to classical and traditional theories, we can better understand the underlying mechanisms and potentially predict future behaviors under various scenarios.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting_started/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../product_popularity/" class="btn btn-neutral float-right" title="Product Popularity">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../getting_started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../product_popularity/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
