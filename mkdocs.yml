@@ -1,6 +1,11 @@
 site_name: Simulacra Documentation
 
-theme: material
+theme:
+  name: material
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
 
 nav:
   - Home: index.md
@@ -21,14 +26,3 @@ plugins:
         python:
           rendering:
             show_source: true
-
-document$.subscribe(({ body }) => { 
-  renderMathInElement(body, {
-    delimiters: [
-      { left: "$$",  right: "$$",  display: true },
-      { left: "$",   right: "$",   display: false },
-      { left: "\\(", right: "\\)", display: false },
-      { left: "\\[", right: "\\]", display: true }
-    ],
-  })
-})
