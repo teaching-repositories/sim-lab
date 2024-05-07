@@ -7,10 +7,10 @@ contexts.
 
 ## Installation
 
-To install SimNexus, you can use pip directly from GitHub:
+To install SimNexus
 
 ```bash
-pip install git+https://github.com/teaching-repositories/simnexus.git
+pip install simnexus
 ```
 
 ## Available Simulations
@@ -22,6 +22,11 @@ pip install git+https://github.com/teaching-repositories/simnexus.git
 - **Product Popularity Simulation:** Simulate the rise and fall of product
   demand, investigate virality factors, and examine different marketing
   strategies.
+
+## Documentation
+
+For more detailed information about using SimNexus, see the [documentation](https://yourproject.readthedocs.io/).
+
 
 ## Basic Usage Example
 
