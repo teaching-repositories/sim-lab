@@ -1,4 +1,4 @@
-# Simulacra: Business Simulation Toolkit
+# SimNexus: Business Simulation Toolkit
 
 This Python package provides a set of classes for simulating various
 business-related scenarios. It is designed for educational use, allowing
@@ -7,10 +7,10 @@ contexts.
 
 ## Installation
 
-To install Simulacra, you can use pip directly from GitHub:
+To install SimNexus, you can use pip directly from GitHub:
 
 ```bash
-pip install git+https://github.com/teaching-repositories/simulacra.git
+pip install git+https://github.com/teaching-repositories/simnexus.git
 ```
 
 ## Available Simulations
@@ -28,7 +28,7 @@ pip install git+https://github.com/teaching-repositories/simulacra.git
 Here is an example of how to use the Resource Fluctuations Simulation:
 
 ```python
-from simulacra import ResourceFluctuationsSimulation
+from simnexus import ResourceFluctuationsSimulation
 
 # Create a resource simulation
 sim = ResourceFluctuationsSimulation(start_price=100, days=365, volatility=0.05, drift=0.01,
@@ -49,7 +49,7 @@ prices = sim.run_simulation()
 
 ## Contributing
 
-We welcome contributions to the Simulacra project! If you have suggestions or improvements, feel free to fork the repository and submit a pull request. Please ensure your code adheres to the existing style, and include tests for new features or bug fixes.
+We welcome contributions to the SimNexus project! If you have suggestions or improvements, feel free to fork the repository and submit a pull request. Please ensure your code adheres to the existing style, and include tests for new features or bug fixes.
 
 ## License
 

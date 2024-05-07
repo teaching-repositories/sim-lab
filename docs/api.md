@@ -2,12 +2,12 @@
 
 ## Product Popularity Simulation Class
 
-::: simulacra.ProductPopularitySimulation
+::: simnexus.ProductPopularitySimulation
 
 ## Resource Fluctuation Simulation Class
 
-::: simulacra.ResourceFluctuationsSimulation
+::: simnexus.ResourceFluctuationsSimulation
 
 ## Stock Market Simulation Class
 
-::: simulacra.StockMarketSimulation
+::: simnexus.StockMarketSimulation

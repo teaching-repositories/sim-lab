@@ -1,37 +1,37 @@
-# Getting Started with Simulacra
+# Getting Started with SimNexus
 
-Welcome to the getting started guide for Simulacra, a package designed for simulating various phenomena such as product popularity, stock market behaviors, and resource fluctuations. This guide will walk you through the steps of installing the package and running your first simulation.
+Welcome to the getting started guide for SimNexus, a package designed for simulating various phenomena such as product popularity, stock market behaviors, and resource fluctuations. This guide will walk you through the steps of installing the package and running your first simulation.
 
 ## Installation
 
-To use Simulacra, you need to have Python installed on your machine. If you do not have Python installed, you can download and install it from [python.org](https://www.python.org/downloads/).
+To use SimNexus, you need to have Python installed on your machine. If you do not have Python installed, you can download and install it from [python.org](https://www.python.org/downloads/).
 
 ### Install from GitHub
 
-Simulacra can be installed directly from its GitHub repository using pip. Open your command line interface (CLI) and run the following command:
+SimNexus can be installed directly from its GitHub repository using pip. Open your command line interface (CLI) and run the following command:
 
 ```bash
-pip install git+https://github.com/teaching-repositories/simulacra.git -q
+pip install git+https://github.com/teaching-repositories/simnexus.git -q
 ```
 
-This command will fetch the latest version of Simulacra from the GitHub repository and install it along with its dependencies.
+This command will fetch the latest version of SimNexus from the GitHub repository and install it along with its dependencies.
 
 ## Verify Installation
 
-To ensure that Simulacra was installed correctly, try running the following command:
+To ensure that SimNexus was installed correctly, try running the following command:
 
 ```python
-python -c "import simulacra; print(simulacra.__version__)"
+python -c "import simnexus; print(simnexus.__version__)"
 ```
 
-This command should print the version number of the Simulacra package if it has been installed successfully.
+This command should print the version number of the SimNexus package if it has been installed successfully.
 
 ## Running Your First Simulation
 
-Once Simulacra is installed, you can start simulating right away. Here’s a quick example on how to simulate product popularity:
+Once SimNexus is installed, you can start simulating right away. Here’s a quick example on how to simulate product popularity:
 
 ```python
-from simulacra import ProductPopularitySimulation
+from simnexus import ProductPopularitySimulation
 
 # Create a simulation instance
 sim = ProductPopularitySimulation(
@@ -56,10 +56,10 @@ This example sets up a year-long simulation of product demand, including a promo
 ## Next Steps
 
 - Explore the detailed API documentation for more features and other simulation types.
-- Check out examples and tutorials in the documentation to get more familiar with what you can achieve with Simulacra.
+- Check out examples and tutorials in the documentation to get more familiar with what you can achieve with SimNexus.
 
 ## Getting Help
 
 If you encounter any issues or have questions, please refer to the [Contact](contact.md) page for information on how to get in touch.
 
-Thank you for using Simulacra, and happy simulating!
+Thank you for using SimNexus, and happy simulating!

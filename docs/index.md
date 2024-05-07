@@ -1,6 +1,6 @@
-# Simulacra Overview
+# SimNexus Overview
 
-Welcome to the documentation for the Simulacra framework. This framework includes several simulation models that are designed to demonstrate and analyze various phenomena in business and economics. Here, you will find detailed information on the workings and usage of each simulation model.
+Welcome to the documentation for the SimNexus framework. This framework includes several simulation models that are designed to demonstrate and analyze various phenomena in business and economics. Here, you will find detailed information on the workings and usage of each simulation model.
 
 ### Product Popularity Simulation
 

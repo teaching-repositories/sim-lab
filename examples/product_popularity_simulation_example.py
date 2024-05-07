@@ -1,4 +1,4 @@
-from simulacra import ProductPopularitySimulation
+from simnexus import ProductPopularitySimulation
 import matplotlib.pyplot as plt
 
 # Setting up a scenario with moderate natural growth and a significant marketing campaign.

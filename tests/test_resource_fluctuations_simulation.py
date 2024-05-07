@@ -1,5 +1,5 @@
 import pytest
-from simulacra import ResourceFluctuationsSimulation
+from simnexus import ResourceFluctuationsSimulation
 
 
 def test_initialization():

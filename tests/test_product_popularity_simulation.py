@@ -1,5 +1,5 @@
 import pytest
-from simulacra import ProductPopularitySimulation
+from simnexus import ProductPopularitySimulation
 
 
 def test_initialization():

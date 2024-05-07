@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "simulacra"
+name = "simnexus"
 version = "0.1.1"
 description = "This Python package provides a set of classes for simulating various business-related scenarios. It is designed for educational use, allowing students to experiment with modeling, analysis, and decision-making in different contexts."
 authors = ["Michael Borck <michael@borck.me>"]

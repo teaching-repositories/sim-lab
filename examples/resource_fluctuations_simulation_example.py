@@ -1,4 +1,4 @@
-from simulacra import ResourceFluctuationsSimulation
+from simnexus import ResourceFluctuationsSimulation
 import matplotlib.pyplot as plt
 
 # Setting up a moderate volatility and upward drift scenario with a supply disruption.

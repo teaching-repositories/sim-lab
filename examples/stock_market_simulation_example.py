@@ -1,4 +1,4 @@
-from simulacra import StockMarketSimulation
+from simnexus import StockMarketSimulation
 import matplotlib.pyplot as plt
 
 # Example scenario: High volatility with a downward price trend and a significant market event.
