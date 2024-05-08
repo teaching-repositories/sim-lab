@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Teaching Guide - SimNexus Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Teaching Guide";
+        var mkdocs_page_input_path = "teaching_guide.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> SimNexus Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../modelling_market_dynamics/">Modelling Market Dynamics</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Simulations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../product_popularity/">Product Popularity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../stock_market/">Stock Market</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../resource_fluctuations/">Resource Fluctuations</a>
+                  </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Teaching Guide</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#educational-objectives">Educational Objectives</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#course-integration">Course Integration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#suggested-courses">Suggested Courses</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#module-breakdown">Module Breakdown</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#assignments-and-projects">Assignments and Projects</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#assessment-criteria">Assessment Criteria</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adapting-simnexus-to-various-course-focuses">Adapting SimNexus to Various Course Focuses</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-simulation-principles-focus">1. Simulation Principles Focus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-object-oriented-programming-oop-focus">2. Object-Oriented Programming (OOP) Focus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-software-development-practices-focus">3. Software Development Practices Focus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#customizing-modules">Customizing Modules</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support-for-educators">Support for Educators</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../api/">API Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contribute/">Contribute</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contact/">Contact</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">SimNexus Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Teaching Guide</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="teaching-guide-for-simnexus-simulation-framework">Teaching Guide for SimNexus Simulation Framework</h1>
+<h2 id="overview">Overview</h2>
+<p>This teaching guide is designed to help educators integrate the SimNexus Simulation Framework into their coursework. The SimNexus project provides a set of tools for simulating various scenarios, including continuous and discrete systems. It is an ideal resource for introducing students to complex concepts in a controlled and interactive environment.</p>
+<h2 id="educational-objectives">Educational Objectives</h2>
+<p>The primary educational objectives of using the SimNexus Simulation Framework in an academic setting include:</p>
+<ul>
+<li><strong>Understanding Core Principles</strong>: Students will learn the fundamental principles of simulation, including the differences and applications of continuous and discrete event simulations.</li>
+<li><strong>Developing Practical Skills</strong>: Through hands-on exercises, students will develop skills in coding, problem-solving, and critical thinking.</li>
+<li><strong>Applying Theoretical Knowledge</strong>: The framework allows students to apply theoretical knowledge to real-world-like scenarios, bridging the gap between theory and practice.</li>
+</ul>
+<h2 id="course-integration">Course Integration</h2>
+<h3 id="suggested-courses">Suggested Courses</h3>
+<ul>
+<li><strong>Introduction to Computational Modeling</strong></li>
+<li><strong>Systems Science and Engineering</strong></li>
+<li><strong>Computer Science Applications</strong></li>
+<li><strong>Data Science and Analytics</strong></li>
+</ul>
+<h3 id="module-breakdown">Module Breakdown</h3>
+<ol>
+<li><strong>Module 1: Introduction to Simulations</strong></li>
+<li>Focus: Understanding the types of simulations.</li>
+<li>
+<p>Activities: Run pre-built simulations from the framework.</p>
+</li>
+<li>
+<p><strong>Module 2: Working with Continuous Simulations</strong></p>
+</li>
+<li>Focus: Explore continuous dynamics.</li>
+<li>
+<p>Activities: Modify parameters in <code>ContinuousSimulation</code> classes and observe outcomes.</p>
+</li>
+<li>
+<p><strong>Module 3: Exploring Discrete Event Simulations</strong></p>
+</li>
+<li>Focus: Dive into event-driven simulation mechanics.</li>
+<li>
+<p>Activities: Implement a simple queuing system using <code>DiscreteEventSimulation</code>.</p>
+</li>
+<li>
+<p><strong>Module 4: Advanced Applications</strong></p>
+</li>
+<li>Focus: Combine both types of simulations for complex scenarios.</li>
+<li>Activities: Students design a hybrid simulation applying learned concepts.</li>
+</ol>
+<h2 id="assignments-and-projects">Assignments and Projects</h2>
+<ul>
+<li><strong>Assignment 1: Simulation Analysis Report</strong></li>
+<li>
+<p>Task: Students run specific simulations and report on the dynamics and results.</p>
+</li>
+<li>
+<p><strong>Project 1: Custom Simulation Development</strong></p>
+</li>
+<li>Task: Students develop their own simulation based on a real-world scenario.</li>
+</ul>
+<h2 id="assessment-criteria">Assessment Criteria</h2>
+<ul>
+<li><strong>Understanding and Application</strong>: Ability to explain and apply simulation concepts correctly.</li>
+<li><strong>Technical Implementation</strong>: Accuracy and efficiency of the simulation code.</li>
+<li><strong>Creativity and Insight</strong>: Originality in the application of simulations to novel scenarios.</li>
+<li><strong>Presentation and Documentation</strong>: Clarity and thoroughness in documentation and presentation of the work.</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><strong>Documentation</strong>: Refer to the main <a href="README.md">README.md</a> for technical details and setup instructions.</li>
+<li><strong>Sample Notebooks</strong>: Access provided Jupyter notebooks for examples and templates.</li>
+</ul>
+<p>Absolutely, it is definitely worthwhile to demonstrate how the same repository can be adapted to different educational focuses, such as simulation principles and object-oriented programming (OOP). Highlighting this versatility in your <code>TEACHING_GUIDE.md</code> can inspire educators to tailor the content to various courses and learning outcomes. Here’s how you can structure this section to illustrate different potential course focuses using the SimNexus framework.</p>
+<h2 id="adapting-simnexus-to-various-course-focuses">Adapting SimNexus to Various Course Focuses</h2>
+<p>SimNexus’s flexible design makes it an excellent resource for courses with varying educational objectives. Below are examples of how the repository can be tailored to focus on different aspects of computer science and engineering education.</p>
+<h3 id="1-simulation-principles-focus">1. Simulation Principles Focus</h3>
+<p><strong>Objective:</strong> To deepen understanding of simulation techniques and their applications in real-world scenarios.</p>
+<p><strong>Course Examples:</strong>
+- <strong>Systems Modeling and Simulation</strong>: Focus on using SimNexus for modeling complex systems and processes.
+- <strong>Computational Physics or Biology</strong>: Use simulations to explore physical or biological phenomena.</p>
+<p><strong>Module Structure:</strong>
+- Introduction to Different Types of Simulations (Continuous vs. Discrete)
+- Applying Statistical Methods to Analyze Simulation Data
+- Case Studies: Using Simulations in Industry-specific Applications</p>
+<h3 id="2-object-oriented-programming-oop-focus">2. Object-Oriented Programming (OOP) Focus</h3>
+<p><strong>Objective:</strong> To enhance proficiency in OOP principles and their practical application in software development.</p>
+<p><strong>Course Examples:</strong>
+- <strong>Advanced Programming Techniques</strong>: Emphasize OOP principles, design patterns, and refactoring using SimNexus.
+- <strong>Software Engineering</strong>: Focus on software design and architecture using OOP methodologies exemplified through SimNexus.</p>
+<p><strong>Module Structure:</strong>
+- Basics of OOP: Classes, Objects, and Encapsulation
+- Advanced OOP: Inheritance, Polymorphism, and Abstract Classes
+- Design Patterns and Best Practices in OOP</p>
+<h3 id="3-software-development-practices-focus">3. Software Development Practices Focus</h3>
+<p><strong>Objective:</strong> To foster skills in software development lifecycle and collaborative coding practices.</p>
+<p><strong>Course Examples:</strong>
+- <strong>Software Development Process</strong>: Introduce students to version control, code reviews, and CI/CD processes.
+- <strong>Collaborative Software Projects</strong>: Use SimNexus as the base for team projects focusing on collaborative development and maintenance.</p>
+<p><strong>Module Structure:</strong>
+- Version Control and GitHub Workflow
+- Continuous Integration and Testing with GitHub Actions
+- Code Review and Documentation Standards</p>
+<h3 id="customizing-modules">Customizing Modules</h3>
+<p>Educators are encouraged to mix and match elements from these suggested structures or add new modules based on the specific needs and goals of their courses. SimNexus’s architecture is designed to be robust yet flexible enough to support diverse teaching strategies and learning objectives.</p>
+<h2 id="support-for-educators">Support for Educators</h2>
+<p>For additional support or to share feedback about this teaching guide, please contact the project maintainers at [your.email@example.com].</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../resource_fluctuations/" class="btn btn-neutral float-left" title="Resource Fluctuations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../api/" class="btn btn-neutral float-right" title="API Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../resource_fluctuations/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../api/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
