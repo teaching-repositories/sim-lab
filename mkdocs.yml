@@ -21,6 +21,7 @@ nav:
       - Product Popularity: product_popularity.md
       - Stock Market: stock_market.md
       - Resource Fluctuations: resource_fluctuations.md
+  - Teaching Guide: teaching_guide.md
   - API Documentation: api.md
   - Contribute: contribute.md
   - Contact: contact.md
