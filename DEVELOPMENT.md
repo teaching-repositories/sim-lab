@@ -25,6 +25,8 @@ This document explains how to set up your development environment and workflow f
    uv pip install -e .[dev]
    ```
 
+   This will install the package in development mode, making the package editable while working on it.
+
 ## Development Workflow
 
 ### Code Style and Quality
@@ -80,18 +82,20 @@ mkdocs serve
 
 ```
 simnexus/
-├── simnexus/              # Package source code
-│   ├── core/              # Core simulation logic
-│   ├── cli/               # Command line interface
-│   ├── tui/               # Terminal user interface
-│   ├── web/               # Web interface
-│   ├── viz/               # Visualization utilities
-│   ├── utils/             # Helper utilities
-│   └── config/            # Configuration management
+├── src/                   # Source directory
+│   ├── simnexus/          # Package source code
+│   │   ├── core/          # Core simulation logic
+│   │   ├── cli/           # Command line interface
+│   │   ├── tui/           # Terminal user interface
+│   │   ├── web/           # Web interface
+│   │   ├── viz/           # Visualization utilities
+│   │   ├── utils/         # Helper utilities
+│   │   └── config/        # Configuration management
 │
 ├── tests/                 # Test suite
 ├── docs/                  # Documentation
 ├── examples/              # Example scripts
+├── scripts/               # Build and utility scripts
 ├── .github/               # GitHub workflows and templates
 ├── pyproject.toml         # Project configuration
 └── mkdocs.yml             # Documentation configuration
