@@ -65,7 +65,7 @@ SimNexus offers multiple ways to run simulations:
 Import SimNexus in your Python code:
 
 ```python
-from simnexus.core.stock_market_simulation import StockMarketSimulation
+from simnexus import StockMarketSimulation
 
 # Create a simulation instance
 sim = StockMarketSimulation(

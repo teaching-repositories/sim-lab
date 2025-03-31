@@ -16,7 +16,7 @@ This simulation models the fluctuations of stock prices, enabling students to ex
 **Example Code**
 
 ```python
-from simnexus.core.stock_market_simulation import StockMarketSimulation
+from simnexus import StockMarketSimulation
 import matplotlib.pyplot as plt
 
 # Example scenario: High volatility with a downward price trend and a significant market event.
