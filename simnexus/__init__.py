@@ -1,7 +1,15 @@
-from .product_popularity_simulation import ProductPopularitySimulation
-from .resource_fluctuations_simulation import ResourceFluctuationsSimulation
-from .stock_market_simulation import StockMarketSimulation
+# Import core simulations for backwards compatibility
+from .core import (
+    ProductPopularitySimulation,
+    ResourceFluctuationsSimulation,
+    StockMarketSimulation
+)
 
+# Package metadata
+__version__ = "0.2.2"
+__author__ = "Michael Borck <michael@borck.me>"
+
+# Make core types available at the package level for easy imports
 __all__ = [
     "ProductPopularitySimulation",
     "ResourceFluctuationsSimulation",

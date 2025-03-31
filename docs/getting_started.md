@@ -1,65 +1,142 @@
 # Getting Started with SimNexus
 
-Welcome to the getting started guide for SimNexus, a package designed for simulating various phenomena such as product popularity, stock market behaviors, and resource fluctuations. This guide will walk you through the steps of installing the package and running your first simulation.
+Welcome to the getting started guide for SimNexus, a toolkit for simulating various business scenarios including stock market fluctuations, resource price dynamics, and product popularity. This guide will walk you through the installation options and different ways to use SimNexus.
 
-## Installation
+## Installation Options
 
-To use SimNexus, you need to have Python installed on your machine. If you do not have Python installed, you can download and install it from [python.org](https://www.python.org/downloads/).
+SimNexus offers flexible installation options depending on your needs:
+
+### Basic Installation
+
+For core simulation functionality only:
+
+```bash
+pip install simnexus
+```
+
+### Full Installation
+
+For all features including CLI, web interface, and development tools:
+
+```bash
+pip install simnexus[dev]
+```
+
+### Component-Specific Installation
+
+For specific interfaces:
+
+```bash
+# Command-line interface
+pip install simnexus[cli]
+
+# Web interface
+pip install simnexus[web]
+```
 
 ### Install from GitHub
 
-SimNexus can be installed directly from its GitHub repository using pip. Open your command line interface (CLI) and run the following command:
+For the latest development version:
 
 ```bash
-pip install git+https://github.com/teaching-repositories/simnexus.git -q
+pip install git+https://github.com/teaching-repositories/simnexus.git
 ```
-
-This command will fetch the latest version of SimNexus from the GitHub repository and install it along with its dependencies.
 
 ## Verify Installation
 
-To ensure that SimNexus was installed correctly, try running the following command:
+To ensure that SimNexus was installed correctly:
 
 ```python
 python -c "import simnexus; print(simnexus.__version__)"
 ```
 
-This command should print the version number of the SimNexus package if it has been installed successfully.
+Or using the CLI:
 
-## Running Your First Simulation
+```bash
+simnexus --version
+```
 
-Once SimNexus is installed, you can start simulating right away. Here’s a quick example on how to simulate product popularity:
+## Usage Methods
+
+SimNexus offers multiple ways to run simulations:
+
+### 1. Python Library
+
+Import SimNexus in your Python code:
 
 ```python
-from simnexus import ProductPopularitySimulation
+from simnexus import StockMarketSimulation
 
 # Create a simulation instance
-sim = ProductPopularitySimulation(
-    start_demand=100,
+sim = StockMarketSimulation(
+    start_price=100,
     days=365,
-    growth_rate=0.01,
-    marketing_impact=0.05,
-    promotion_day=100,
-    promotion_effectiveness=0.3,
+    volatility=0.03,
+    drift=0.001,
+    event_day=180,
+    event_impact=-0.2,
     random_seed=42
 )
 
 # Run the simulation
-results = sim.run_simulation()
+prices = sim.run_simulation()
 
-# Print the results
-print(results)
+# Use the results
+print(f"Final price: ${prices[-1]:.2f}")
 ```
 
-This example sets up a year-long simulation of product demand, including a promotion day with specific effectiveness.
+### 2. Command Line Interface
+
+Run simulations directly from the command line:
+
+```bash
+# Stock market simulation
+simnexus sim stock run --days 365 --event-day 180 --event-impact -0.2 --output results.csv
+
+# Resource fluctuations simulation
+simnexus sim resource run --volatility 0.05 --disruption-day 100 --disruption-severity 0.3
+```
+
+### 3. Web Interface
+
+Launch the web interface for interactive simulation:
+
+```bash
+simnexus ui web
+```
+
+Then open your browser at http://localhost:8000.
+
+### 4. Terminal UI
+
+Launch the terminal user interface (TUI):
+
+```bash
+simnexus ui tui
+```
+
+## Example Resources
+
+SimNexus includes comprehensive examples to help you get started:
+
+- **Python Examples**: Basic scripts showing simulation usage
+- **CLI Examples**: Shell scripts demonstrating command-line capabilities  
+- **Jupyter Notebooks**: Interactive examples for data analysis
+
+See the [examples directory](https://github.com/teaching-repositories/simnexus/tree/main/examples) in the repository.
 
 ## Next Steps
 
-- Explore the detailed API documentation for more features and other simulation types.
-- Check out examples and tutorials in the documentation to get more familiar with what you can achieve with SimNexus.
+- Explore the [API documentation](api.md) for detailed information on simulation classes
+- Try different interfaces: [CLI](cli.md), [TUI](tui.md), or [Web](web.md)
+- Check out the [example code](https://github.com/teaching-repositories/simnexus/tree/main/examples) for practical applications
 
 ## Getting Help
 
-If you encounter any issues or have questions, please refer to the [Contact](contact.md) page for information on how to get in touch.
+If you encounter any issues or have questions:
 
-Thank you for using SimNexus, and happy simulating!
+- Check the [documentation](https://teaching-repositories.github.io/simnexus/)
+- Run `simnexus --help` for CLI assistance
+- Contact information is available on the [Contact](contact.md) page
+
+Happy simulating with SimNexus\!

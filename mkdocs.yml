@@ -1,14 +1,46 @@
-site_name: SimNexus Documentation
+site_name: SimNexus
+site_description: Business Simulation Toolkit
+repo_url: https://github.com/teaching-repositories/simnexus
+site_url: https://teaching-repositories.github.io/simnexus/
 
 theme:
-  name: readthedocs
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
 
 markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.arithmatex:
       generic: true
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
 
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+            heading_level: 2
 
 extra_javascript:
+  - javascripts/katex.js
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
@@ -16,20 +48,16 @@ extra_javascript:
 nav:
   - Home: index.md
   - Getting Started: getting_started.md
-  - Modelling Market Dynamics: modelling_market_dynamics.md
   - Simulations:
-      - Product Popularity: product_popularity.md
-      - Stock Market: stock_market.md
-      - Resource Fluctuations: resource_fluctuations.md
+    - Stock Market: stock_market.md
+    - Resource Fluctuations: resource_fluctuations.md
+    - Product Popularity: product_popularity.md
+  - Interfaces:
+    - Python API: api.md
+    - CLI: cli.md
+    - TUI: tui.md
+    - Web: web.md
+  - Modelling: modelling_market_dynamics.md
   - Teaching Guide: teaching_guide.md
-  - API Documentation: api.md
-  - Contribute: contribute.md
+  - Contributing: contribute.md
   - Contact: contact.md
-
-plugins:
-  - search
-  - mkdocstrings:
-      handlers:
-        python:
-          rendering:
-            show_source: true
