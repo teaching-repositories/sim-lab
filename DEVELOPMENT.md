@@ -101,11 +101,23 @@ simnexus/
 
 1. Update version in `pyproject.toml`
 2. Update the changelog
-3. Create a tag:
+3. Run the release script:
    ```bash
-   git tag -a v0.x.x -m "Release v0.x.x"
-   git push origin v0.x.x
+   # Install required dependencies if needed
+   pip install build twine
+   
+   # Test the release (uploads to TestPyPI)
+   python scripts/release.py --test
+   
+   # Make the actual release
+   python scripts/release.py
    ```
+
+Alternatively, you can still create and push tags manually:
+```bash
+git tag -a v0.x.x -m "Release v0.x.x"
+git push origin v0.x.x
+```
 
 ## Continuous Integration
 
