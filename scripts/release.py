@@ -38,15 +38,14 @@ def check_working_directory():
 
 def check_dependencies():
     """Check if required dependencies are installed."""
-    for cmd in ["twine", "build"]:
-        try:
-            subprocess.check_call(
-                ["which", cmd], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-            )
-        except subprocess.CalledProcessError:
-            print(f"Error: {cmd} not found. Install with: pip install {cmd}")
-            sys.exit(1)
-    print("✅ Dependencies are installed")
+    try:
+        import build
+        import twine
+        print("✅ Dependencies are installed")
+    except ImportError as e:
+        print(f"Error: Required dependency not found - {e}")
+        print("Install with: pip install build twine")
+        sys.exit(1)
 
 
 def parse_version():
