@@ -80,9 +80,26 @@ def build_package():
 
 def upload_to_pypi(test=False):
     """Upload the package to PyPI or TestPyPI."""
-    repo_url = "--repository-url https://test.pypi.org/legacy/" if test else ""
-    run_command(f"twine upload {repo_url} dist/*")
-    print(f"✅ Uploaded to {'TestPyPI' if test else 'PyPI'}")
+    import glob
+    from twine.commands.upload import upload
+    
+    print("Uploading distributions to", "TestPyPI" if test else "PyPI")
+    dist_files = glob.glob(str(ROOT_DIR / "dist" / "*"))
+    if not dist_files:
+        print("Error: No distribution files found in ./dist/")
+        sys.exit(1)
+    
+    args = ["--verbose"]
+    if test:
+        args.extend(["--repository-url", "https://test.pypi.org/legacy/"])
+    args.extend(dist_files)
+    
+    try:
+        upload(args)
+        print(f"✅ Uploaded to {'TestPyPI' if test else 'PyPI'}")
+    except Exception as e:
+        print(f"Error during upload: {e}")
+        sys.exit(1)
 
 
 def main():
