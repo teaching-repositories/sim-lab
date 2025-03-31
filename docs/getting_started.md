@@ -39,7 +39,7 @@ pip install simnexus[web]
 For the latest development version:
 
 ```bash
-pip install git+https://github.com/teaching-repositories/simnexus.git
+pip install git+https://github.com/michael-borck/simnexus.git
 ```
 
 ## Verify Installation
@@ -65,7 +65,7 @@ SimNexus offers multiple ways to run simulations:
 Import SimNexus in your Python code:
 
 ```python
-from simnexus import StockMarketSimulation
+from simnexus.core.stock_market_simulation import StockMarketSimulation
 
 # Create a simulation instance
 sim = StockMarketSimulation(
@@ -123,19 +123,19 @@ SimNexus includes comprehensive examples to help you get started:
 - **CLI Examples**: Shell scripts demonstrating command-line capabilities  
 - **Jupyter Notebooks**: Interactive examples for data analysis
 
-See the [examples directory](https://github.com/teaching-repositories/simnexus/tree/main/examples) in the repository.
+See the [examples directory](https://github.com/michael-borck/simnexus/tree/main/examples) in the repository.
 
 ## Next Steps
 
 - Explore the [API documentation](api.md) for detailed information on simulation classes
 - Try different interfaces: [CLI](cli.md), [TUI](tui.md), or [Web](web.md)
-- Check out the [example code](https://github.com/teaching-repositories/simnexus/tree/main/examples) for practical applications
+- Check out the [example code](https://github.com/michael-borck/simnexus/tree/main/examples) for practical applications
 
 ## Getting Help
 
 If you encounter any issues or have questions:
 
-- Check the [documentation](https://teaching-repositories.github.io/simnexus/)
+- Check the [documentation](https://michael-borck.github.io/simnexus/)
 - Run `simnexus --help` for CLI assistance
 - Contact information is available on the [Contact](contact.md) page
 

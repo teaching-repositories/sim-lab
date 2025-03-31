@@ -15,7 +15,7 @@ pip install simnexus[web]
 Start the web server with:
 
 ```bash
-simnexus-web
+simnexus ui web
 ```
 
 By default, the server runs on http://localhost:8000.
@@ -23,7 +23,7 @@ By default, the server runs on http://localhost:8000.
 For custom host and port:
 
 ```bash
-simnexus-web --host 0.0.0.0 --port 5000
+simnexus ui web --host 0.0.0.0 --port 5000
 ```
 
 ## Web Interface Features
@@ -80,7 +80,7 @@ FastHTML allows SimNexus to create a modern, interactive web interface without t
 For production deployment, we recommend using Uvicorn behind a reverse proxy like Nginx:
 
 ```bash
-uvicorn simnexus.web.app:app --host 0.0.0.0 --port 8000
+uvicorn simnexus.web.app:create_app --host 0.0.0.0 --port 8000
 ```
 
 Or with Docker (see the project repository for the Dockerfile).

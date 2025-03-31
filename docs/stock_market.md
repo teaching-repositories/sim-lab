@@ -16,7 +16,7 @@ This simulation models the fluctuations of stock prices, enabling students to ex
 **Example Code**
 
 ```python
-from simnexus import StockMarketSimulation
+from simnexus.core.stock_market_simulation import StockMarketSimulation
 import matplotlib.pyplot as plt
 
 # Example scenario: High volatility with a downward price trend and a significant market event.
@@ -26,7 +26,7 @@ sim = StockMarketSimulation(start_price=100, days=365, volatility=0.03,
 prices = sim.run_simulation()
 
 # Visualising the stock market fluctuations
-plt.figure(figsise=(10, 6))
+plt.figure(figsize=(10, 6))
 plt.plot(prices, label='Stock Price')
 plt.axvline(x=sim.event_day, color='red', linestyle='--', label='Major Market Event')
 plt.xlabel('Days')

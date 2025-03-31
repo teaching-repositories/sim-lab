@@ -15,7 +15,7 @@ pip install simnexus[dev]
 Launch the TUI with:
 
 ```bash
-simnexus-tui
+simnexus ui tui
 ```
 
 ## Interface Overview

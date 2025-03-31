@@ -14,13 +14,13 @@ Please allow 24-48 hours for a response, as we strive to provide detailed and he
 
 If you're experiencing technical issues or need help troubleshooting, you can:
 
-- **Submit an Issue**: Visit our [GitHub Issues Page](https://github.com/teaching-repositories/simnexus/issues) to report a bug or a problem. Please check to see if your issue has already been reported or addressed before opening a new issue.
+- **Submit an Issue**: Visit our [GitHub Issues Page](https://github.com/michael-borck/simnexus/issues) to report a bug or a problem. Please check to see if your issue has already been reported or addressed before opening a new issue.
 
 ## Feature Requests
 
 We are always looking to improve SimNexus and welcome your ideas and proposals for new features:
 
-- **Feature Suggestions**: Please submit your feature requests through our [GitHub Issues Page](https://github.com/teaching-repositories/simnexus/issues). Tag your post with the 'feature request' label so we can easily identify it.
+- **Feature Suggestions**: Please submit your feature requests through our [GitHub Issues Page](https://github.com/michael-borck/simnexus/issues). Tag your post with the 'feature request' label so we can easily identify it.
 
 ## Follow Us
 

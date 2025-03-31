@@ -58,9 +58,9 @@ cli = [
 ]
 
 [project.urls]
-Homepage = "http://yourhomepage.com"
-Documentation = "https://teaching-repositories.github.io/simnexus/"
-Repository = "https://github.com/teaching-repositories/simnexus"
+Homepage = "http://simnexus.borck.me"
+Documentation = "https://michael-borck.github.io/simnexus/"
+Repository = "https://github.com/michael-borck/simnexus"
 
 [project.scripts]
 simnexus = "simnexus.cli.main:app"
