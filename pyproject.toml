@@ -46,6 +46,8 @@ dev = [
     "mkdocstrings-python>=1.10.0",
     "ruff>=0.1.5",
     "mypy>=1.8.0",
+    "build>=1.0.0",
+    "twine>=4.0.0",
 ]
 web = [
     "uvicorn>=0.29.0",
