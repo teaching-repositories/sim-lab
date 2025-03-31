@@ -95,7 +95,8 @@ def upload_to_pypi(test=False):
     args.extend(dist_files)
     
     try:
-        upload(args)
+        # Use twine directly
+        os.system(f"python -m twine upload {'--repository-url https://test.pypi.org/legacy/' if test else ''} dist/*")
         print(f"✅ Uploaded to {'TestPyPI' if test else 'PyPI'}")
     except Exception as e:
         print(f"Error during upload: {e}")
