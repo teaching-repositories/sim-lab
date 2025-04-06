@@ -1,4 +1,4 @@
-"""Web interface for SimNexus using FastHTML."""
+"""Web interface for SimLab using FastHTML."""
 
 from fasthtml import FastHTML, Route, get, post
 from fasthtml.responses import HTMLResponse
@@ -9,7 +9,7 @@ import numpy as np
 import json
 from typing import List, Optional
 
-from simnexus import (
+from sim_lab import (
     StockMarketSimulation,
     ResourceFluctuationsSimulation,
     ProductPopularitySimulation
@@ -30,7 +30,7 @@ if not templates_dir.exists():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}SimNexus{% endblock %}</title>
+    <title>{% block title %}SimLab{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
@@ -43,7 +43,7 @@ if not templates_dir.exists():
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <span class="fs-4">SimNexus</span>
+                <span class="fs-4">SimLab</span>
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
@@ -56,7 +56,7 @@ if not templates_dir.exists():
             {% block content %}{% endblock %}
         </main>
         <footer class="pt-5 my-5 text-muted border-top">
-            SimNexus &middot; &copy; 2025
+            SimLab &middot; &copy; 2025
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -73,7 +73,7 @@ async def index(request):
     """Render the home page."""
     return templates.TemplateResponse(
         "base.html",
-        {"request": request, "block_content": "<h1>Welcome to SimNexus</h1><p>Select a simulation from the navigation menu above.</p>"}
+        {"request": request, "block_content": "<h1>Welcome to SimLab</h1><p>Select a simulation from the navigation menu above.</p>"}
     )
 
 def create_app():

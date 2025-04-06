@@ -6,7 +6,7 @@ from .core import (
 )
 
 # Package metadata
-__version__ = "0.2.2"
+__version__ = "0.3.0"
 __author__ = "Michael Borck <michael@borck.me>"
 
 # Make core types available at the package level for easy imports

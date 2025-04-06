@@ -1,4 +1,4 @@
-"""Terminal User Interface for SimNexus."""
+"""Terminal User Interface for SimLab."""
 
 from textual.app import App, ComposeResult
 from textual.containers import Container
@@ -6,7 +6,7 @@ from textual.widgets import Header, Footer, Static, Button, Label, Input, Select
 from textual.binding import Binding
 from textual.screen import Screen
 
-from simnexus import (
+from sim_lab import (
     StockMarketSimulation,
     ResourceFluctuationsSimulation,
     ProductPopularitySimulation
@@ -22,7 +22,7 @@ class WelcomeScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
         yield Container(
-            Static("# Welcome to SimNexus", classes="title"),
+            Static("# Welcome to SimLab", classes="title"),
             Static("Select a simulation type to begin:", classes="subtitle"),
             Button("Stock Market Simulation", id="stock", variant="primary"),
             Button("Resource Fluctuations Simulation", id="resource"),
@@ -41,8 +41,8 @@ class WelcomeScreen(Screen):
             self.app.push_screen("product_form")
 
 
-class SimNexusApp(App):
-    """Main SimNexus TUI application."""
+class SimLabApp(App):
+    """Main SimLab TUI application."""
     
     CSS = """
     .welcome {
@@ -83,6 +83,6 @@ class SimNexusApp(App):
 
 
 def run_app():
-    """Run the SimNexus TUI application."""
-    app = SimNexusApp()
+    """Run the SimLab TUI application."""
+    app = SimLabApp()
     app.run()

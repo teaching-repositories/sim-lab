@@ -1,7 +1,7 @@
-site_name: SimNexus
+site_name: SimLab
 site_description: Business Simulation Toolkit
-repo_url: https://github.com/teaching-repositories/simnexus
-site_url: https://teaching-repositories.github.io/simnexus/
+repo_url: https://github.com/teaching-repositories/sim-lab
+site_url: https://teaching-repositories.github.io/sim-lab/
 
 theme:
   name: material

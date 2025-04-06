@@ -1,4 +1,4 @@
-"""Command line interface for SimNexus."""
+"""Command line interface for SimLab."""
 
 import typer
 from typing import Optional
@@ -11,7 +11,7 @@ from rich.panel import Panel
 
 # Create Typer app with command groups
 app = typer.Typer(
-    name="simnexus",
+    name="simlab",
     help="Business simulation toolkit for educational use",
     add_completion=False,
 )
@@ -42,13 +42,13 @@ def main(
         None, "--version", "-v", help="Show the application version and exit."
     ),
 ):
-    """SimNexus CLI - Business simulation toolkit for educational use."""
+    """SimLab CLI - Business simulation toolkit for educational use."""
     if version:
         try:
-            version = importlib.metadata.version("simnexus")
-            console.print(f"SimNexus version: {version}")
+            version = importlib.metadata.version("sim-lab")
+            console.print(f"SimLab version: {version}")
         except importlib.metadata.PackageNotFoundError:
-            console.print("SimNexus version: [italic]development[/italic]")
+            console.print("SimLab version: [italic]development[/italic]")
         raise typer.Exit()
 
 
@@ -65,7 +65,7 @@ def run_stock_simulation(
     viz: bool = typer.Option(False, help="Visualize the results"),
 ):
     """Run a stock market simulation with the specified parameters."""
-    from simnexus import StockMarketSimulation
+    from sim_lab import StockMarketSimulation
     import matplotlib.pyplot as plt
     import pandas as pd
     import os
@@ -127,7 +127,7 @@ def run_resource_simulation(
     viz: bool = typer.Option(False, help="Visualize the results"),
 ):
     """Run a resource fluctuations simulation with the specified parameters."""
-    from simnexus import ResourceFluctuationsSimulation
+    from sim_lab import ResourceFluctuationsSimulation
     import matplotlib.pyplot as plt
     import pandas as pd
     
@@ -186,7 +186,7 @@ def run_product_simulation(
     viz: bool = typer.Option(False, help="Visualize the results"),
 ):
     """Run a product popularity simulation with the specified parameters."""
-    from simnexus import ProductPopularitySimulation
+    from sim_lab import ProductPopularitySimulation
     import matplotlib.pyplot as plt
     import pandas as pd
     
@@ -236,13 +236,13 @@ def launch_web(
     """Launch the web interface."""
     try:
         import uvicorn
-        from simnexus.web.app import create_app
+        from sim_lab.web.app import create_app
         
         console.print(Panel(f"Launching web interface at http://{host}:{port}", style="green"))
         uvicorn.run(create_app, host=host, port=port)
     except ImportError:
         console.print(
-            "Web dependencies not installed. Install with: pip install simnexus[web]",
+            "Web dependencies not installed. Install with: pip install sim-lab[web]",
             style="red"
         )
         raise typer.Exit(1)
@@ -252,7 +252,7 @@ def launch_web(
 def launch_tui():
     """Launch the terminal user interface."""
     try:
-        from simnexus.tui.app import run_app
+        from sim_lab.tui.app import run_app
         
         console.print(Panel("Launching terminal user interface", style="blue"))
         run_app()
@@ -266,15 +266,15 @@ def launch_tui():
 
 @util_app.command("info")
 def show_info():
-    """Show information about the SimNexus package."""
+    """Show information about the SimLab package."""
     try:
-        version = importlib.metadata.version("simnexus")
-        console.print(Panel.fit("SimNexus Information", style="green"))
+        version = importlib.metadata.version("sim-lab")
+        console.print(Panel.fit("SimLab Information", style="green"))
         console.print(f"Version: {version}")
         console.print(f"Python: {sys.version.split()[0]}")
         console.print(f"Path: {os.path.dirname(os.path.abspath(__file__))}")
     except importlib.metadata.PackageNotFoundError:
-        console.print("SimNexus package not installed in development mode.", style="yellow")
+        console.print("SimLab package not installed in development mode.", style="yellow")
         console.print(f"Path: {os.path.dirname(os.path.abspath(__file__))}")
 
 

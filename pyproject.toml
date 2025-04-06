@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "simnexus"
+name = "sim-lab"
 version = "0.3.0"
 description = "A set of classes for simulating various business-related scenarios for educational use"
 readme = "README.md"
@@ -57,12 +57,12 @@ cli = [
 ]
 
 [project.urls]
-Homepage = "http://simnexus.borck.me"
-Documentation = "https://michael-borck.github.io/simnexus/"
-Repository = "https://github.com/michael-borck/simnexus"
+Homepage = "http://sim-lab.borck.me"
+Documentation = "https://michael-borck.github.io/sim-lab/"
+Repository = "https://github.com/michael-borck/sim-lab"
 
 [project.scripts]
-simnexus = "simnexus.cli.main:app"
+simlab = "sim_lab.cli.main:app"
 
 [tool.ruff]
 target-version = "py310"
@@ -86,7 +86,7 @@ ignore = [
 "tests/**/*.py" = ["D", "E501"]
 
 [tool.ruff.isort]
-known-first-party = ["simnexus"]
+known-first-party = ["sim_lab"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
@@ -99,7 +99,7 @@ line-ending = "auto"
 minversion = "8.0"
 testpaths = ["tests"]
 python_files = "test_*.py"
-addopts = "--cov=simnexus --cov-report=term-missing"
+addopts = "--cov=sim_lab --cov-report=term-missing"
 
 [tool.mypy]
 python_version = "3.10"

@@ -1,4 +1,4 @@
-# SimNexus: Business Simulation Toolkit
+# SimLab: Business Simulation Toolkit
 
 This Python package provides a set of classes for simulating various
 business-related scenarios. It is designed for educational use, allowing
@@ -7,20 +7,20 @@ contexts.
 
 ## Installation
 
-To install SimNexus with all features:
+To install SimLab with all features:
 
 ```bash
-pip install simnexus
+pip install sim-lab
 ```
 
 For specific interfaces only:
 
 ```bash
 # CLI only
-pip install simnexus[cli]
+pip install sim-lab[cli]
 
 # Web interface
-pip install simnexus[web]
+pip install sim-lab[web]
 ```
 
 ## Features
@@ -47,7 +47,7 @@ pip install simnexus[web]
 ### Python API
 
 ```python
-from simnexus import ResourceFluctuationsSimulation
+from sim_lab import ResourceFluctuationsSimulation
 
 # Create a resource simulation
 sim = ResourceFluctuationsSimulation(
@@ -63,7 +63,7 @@ sim = ResourceFluctuationsSimulation(
 prices = sim.run_simulation()
 
 # Visualize the results
-from simnexus.viz import plot_time_series
+from sim_lab.viz import plot_time_series
 plot_time_series(
     data=prices,
     title="Resource Price Fluctuations",
@@ -77,24 +77,24 @@ plot_time_series(
 
 ```bash
 # Run a stock market simulation
-simnexus stock run --start-price 100 --days 365 --volatility 0.02 --drift 0.001 --output prices.csv
+simlab stock run --start-price 100 --days 365 --volatility 0.02 --drift 0.001 --output prices.csv
 
 # Get help for all commands
-simnexus --help
+simlab --help
 ```
 
 ### Terminal UI
 
 ```bash
 # Launch the interactive terminal UI
-simnexus-tui
+simlab-tui
 ```
 
 ### Web Interface
 
 ```bash
 # Start the web server
-simnexus-web
+simlab-web
 
 # Then visit http://localhost:8000 in your browser
 ```
@@ -108,11 +108,11 @@ simnexus-web
 
 ## Documentation
 
-For more detailed information about using SimNexus, see the [documentation](https://yourproject.readthedocs.io/).
+For more detailed information about using SimLab, see the [documentation](https://yourproject.readthedocs.io/).
 
 ## Development
 
-SimNexus uses modern Python development tools:
+SimLab uses modern Python development tools:
 
 - [uv](https://github.com/astral-sh/uv) for dependency management
 - [Ruff](https://github.com/astral-sh/ruff) for linting and formatting
@@ -123,8 +123,8 @@ To setup a development environment:
 
 ```bash
 # Clone the repository
-git clone https://github.com/teaching-repositories/simnexus.git
-cd simnexus
+git clone https://github.com/teaching-repositories/sim-lab.git
+cd sim-lab
 
 # Run the setup script
 ./scripts/setup_dev.sh
@@ -139,7 +139,7 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for more details.
 
 ## Contributing
 
-We welcome contributions to the SimNexus project! See the [Contributing Guide](CONTRIBUTING.md) for more details.
+We welcome contributions to the SimLab project! See the [Contributing Guide](CONTRIBUTING.md) for more details.
 
 ## License
 
