@@ -11,6 +11,7 @@ authors = [
     {name = "Michael Borck", email = "michael@borck.me"}
 ]
 license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -46,7 +47,7 @@ dev = [
     "ruff>=0.1.5",
     "mypy>=1.8.0",
     "build>=1.0.0",
-    "twine>=4.0.0",
+    "twine==6.0.1",
 ]
 web = [
     "uvicorn>=0.29.0",
