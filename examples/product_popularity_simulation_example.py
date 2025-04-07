@@ -1,9 +1,16 @@
-from simnexus import ProductPopularitySimulation
+from sim_lab.core import SimulatorRegistry
 import matplotlib.pyplot as plt
 
 # Setting up a scenario with moderate natural growth and a significant marketing campaign.
-sim = ProductPopularitySimulation(start_demand=500, days=180, growth_rate=0.02, 
-                                  marketing_impact=0.1, promotion_day=30, promotion_effectiveness=0.5)
+sim = SimulatorRegistry.create(
+    "ProductPopularity",
+    start_demand=500, 
+    days=180, 
+    growth_rate=0.02, 
+    marketing_impact=0.1, 
+    promotion_day=30, 
+    promotion_effectiveness=0.5
+)
 
 demand = sim.run_simulation()
 

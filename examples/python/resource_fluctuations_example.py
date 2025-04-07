@@ -1,5 +1,5 @@
 """
-Basic example of using SimNexus to simulate resource price fluctuations.
+Basic example of using SimLab to simulate resource price fluctuations.
 
 This example demonstrates:
 1. Creating a ResourceFluctuationsSimulation instance
@@ -7,11 +7,12 @@ This example demonstrates:
 3. Visualizing the results with matplotlib
 """
 
-from simnexus import ResourceFluctuationsSimulation
+from sim_lab.core import SimulatorRegistry
 import matplotlib.pyplot as plt
 
 # Setting up a moderate volatility and upward drift scenario with a supply disruption.
-sim = ResourceFluctuationsSimulation(
+sim = SimulatorRegistry.create(
+    "ResourceFluctuations",
     start_price=100,           # Starting price of the resource
     days=250,                  # Simulate for 250 days
     volatility=0.015,          # Daily volatility of 1.5%

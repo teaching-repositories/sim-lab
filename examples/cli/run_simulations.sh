@@ -1,19 +1,19 @@
 #!/bin/bash
-# Example script demonstrating various SimNexus CLI commands
+# Example script demonstrating various SimLab CLI commands
 
-echo "SimNexus CLI Examples"
+echo "SimLab CLI Examples"
 echo "===================="
 echo ""
 
-# Check if SimNexus is installed
+# Check if SimLab is installed
 if ! command -v simnexus &> /dev/null; then
-    echo "SimNexus is not installed. Install with:"
+    echo "SimLab is not installed. Install with:"
     echo "pip install simnexus[cli]"
     exit 1
 fi
 
 # Get version info
-echo "Getting SimNexus version..."
+echo "Getting SimLab version..."
 simnexus --version
 echo ""
 

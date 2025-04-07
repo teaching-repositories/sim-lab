@@ -1,16 +1,16 @@
-# SimNexus Examples
+# SimLab Examples
 
-This directory contains example code showing how to use SimNexus in different contexts.
+This directory contains example code showing how to use SimLab in different contexts.
 
 ## Directory Structure
 
-- `python/`: Basic Python script examples for using SimNexus as a library
+- `python/`: Basic Python script examples for using SimLab as a library
 - `cli/`: Command-line interface examples showing how to use the CLI tools
 - `jupyter/`: Jupyter notebook examples for interactive data analysis
 
 ## Python Examples
 
-The Python examples demonstrate how to use SimNexus as an imported library:
+The Python examples demonstrate how to use SimLab as an imported library:
 
 - `stock_market_example.py`: Stock market simulation example
 - `resource_fluctuations_example.py`: Resource price fluctuation example
@@ -25,7 +25,7 @@ python resource_fluctuations_example.py
 
 ## CLI Examples
 
-The CLI examples show how to use SimNexus from the command line:
+The CLI examples show how to use SimLab from the command line:
 
 - `run_simulations.sh`: Script demonstrating various CLI commands
 
@@ -52,7 +52,7 @@ jupyter notebook simulation_examples.ipynb
 
 ## Requirements
 
-These examples require SimNexus to be installed with the appropriate dependencies:
+These examples require SimLab to be installed with the appropriate dependencies:
 
 ```bash
 # For Python examples

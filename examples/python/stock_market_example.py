@@ -1,5 +1,5 @@
 """
-Basic example of using SimNexus to simulate a stock market scenario.
+Basic example of using SimLab to simulate a stock market scenario.
 
 This example demonstrates:
 1. Creating a StockMarketSimulation instance
@@ -7,11 +7,12 @@ This example demonstrates:
 3. Visualizing the results with matplotlib
 """
 
-from simnexus import StockMarketSimulation
+from sim_lab.core import SimulatorRegistry
 import matplotlib.pyplot as plt
 
 # Example scenario: High volatility with a downward price trend and a significant market event.
-sim = StockMarketSimulation(
+sim = SimulatorRegistry.create(
+    "StockMarket",
     start_price=100,     # Starting price of the stock
     days=365,            # Simulate for one year
     volatility=0.03,     # Daily volatility of 3%
