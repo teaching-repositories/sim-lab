@@ -138,3 +138,8 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
+# Node.js / npm files (not needed for Python project)
+package.json
+package-lock.json
+node_modules/
+
