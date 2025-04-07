@@ -100,7 +100,8 @@ line-ending = "auto"
 minversion = "8.0"
 testpaths = ["tests"]
 python_files = "test_*.py"
-addopts = "--cov=sim_lab --cov-report=term-missing"
+# Temporarily disable coverage for testing
+# addopts = "--cov=sim_lab --cov-report=term-missing"
 
 [tool.mypy]
 python_version = "3.10"
