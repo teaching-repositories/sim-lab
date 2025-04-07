@@ -1,6 +1,6 @@
-# SimNexus Project Roadmap
+# SimLab Project Roadmap
 
-This document outlines the planned development roadmap for transforming SimNexus into a fully-featured simulation toolkit with multiple interfaces.
+This document outlines the planned development roadmap for transforming SimLab into a fully-featured simulation toolkit with multiple interfaces.
 
 ## Core Architecture
 
