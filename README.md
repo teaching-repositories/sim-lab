@@ -1,9 +1,6 @@
-# SimLab: Business Simulation Toolkit
+# SimLab: Comprehensive Simulation Toolkit
 
-This Python package provides a set of classes for simulating various
-business-related scenarios. It is designed for educational use, allowing
-students to experiment with modeling, analysis, and decision-making in different
-contexts.
+SimLab is a Python package providing a versatile set of simulation tools for modeling complex systems across various domains. It offers a unified interface for different simulation paradigms, making it ideal for educational, research, and business applications.
 
 ## Installation
 
@@ -21,63 +18,90 @@ pip install sim-lab[cli]
 
 # Web interface
 pip install sim-lab[web]
+
+# TUI (terminal interface)
+pip install sim-lab[tui]
 ```
 
-## Features
+## Key Features
 
-- Multiple simulation types for business scenarios
-- Command-line interface (CLI)
-- Terminal user interface (TUI)
-- Web interface with REST API
-- Visualization tools
-- Data import/export
+- **Unified Interface**: All simulators share a consistent API
+- **Registry System**: Dynamic discovery and instantiation of simulation models
+- **Multiple Interfaces**: CLI, TUI, Web, and Python API
+- **Visualization Tools**: Built-in plotting and visualization capabilities
+- **Data Import/Export**: Support for common data formats
+- **Parameter Validation**: Comprehensive input validation
+- **Stochastic Processes**: Support for random processes with seed control
 
-## Available Simulations
+## Simulation Categories
 
-- **Stock Market Simulation:** Simulate stock price fluctuations, incorporate
-  technical indicators, and develop simple trading strategies.
-- **Resource Fluctuations Simulation:** Model changes in the price of a
-  resource, analyze supply/demand dynamics, and implement hedging strategies.
-- **Product Popularity Simulation:** Simulate the rise and fall of product
-  demand, investigate virality factors, and examine different marketing
-  strategies.
+SimLab includes a wide range of simulation types:
 
-## Usage
+### Basic Simulations
+- **Stock Market**: Model stock price fluctuations with volatility, drift, and market events
+- **Resource Fluctuations**: Simulate resource price dynamics with supply disruptions
+- **Product Popularity**: Model product demand considering growth, marketing, and promotions
 
-### Python API
+### Discrete Event Simulations
+- **Discrete Event**: General-purpose event-driven simulation engine
+- **Queueing**: Model service systems with arrivals, queues, and servers
+
+### Statistical Simulations
+- **Monte Carlo**: Sample random processes to estimate numerical results
+- **Markov Chain**: Model stochastic processes with the Markov property
+
+### Agent-Based Simulation
+- Model complex systems through interactions of autonomous agents
+
+### System Dynamics
+- Model systems with stocks, flows, and feedback loops
+
+### Network Simulations
+- Model processes on complex networks with different topologies
+
+### Ecological Simulations
+- **Predator-Prey**: Model population dynamics using Lotka-Volterra equations
+
+### Domain-Specific Simulations
+- **Epidemiological**: SIR/SEIR disease spread models
+- **Cellular Automaton**: Grid-based models with local update rules
+- **Supply Chain**: Model multi-tier supply chains with inventory management
+
+## Basic Usage
 
 ```python
-from sim_lab import ResourceFluctuationsSimulation
+from sim_lab.core import SimulatorRegistry
 
-# Create a resource simulation
-sim = ResourceFluctuationsSimulation(
-    start_price=100, 
-    days=365, 
-    volatility=0.05, 
-    drift=0.01,
-    supply_disruption_day=180, 
-    disruption_severity=0.2
+# Create a simulation using the registry
+sim = SimulatorRegistry.create(
+    "StockMarket",
+    start_price=100.0,
+    days=252,
+    volatility=0.02,
+    drift=0.0005,
+    random_seed=42
 )
 
-# Run the simulation and get results
+# Run the simulation
 prices = sim.run_simulation()
 
 # Visualize the results
-from sim_lab.viz import plot_time_series
-plot_time_series(
-    data=prices,
-    title="Resource Price Fluctuations",
-    xlabel="Days",
-    ylabel="Price ($)",
-    events={180: "Supply Disruption"}
-)
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+plt.plot(prices)
+plt.title('Stock Price Simulation')
+plt.xlabel('Trading Days')
+plt.ylabel('Price ($)')
+plt.grid(True)
+plt.show()
 ```
 
 ### Command Line Interface
 
 ```bash
 # Run a stock market simulation
-simlab stock run --start-price 100 --days 365 --volatility 0.02 --drift 0.001 --output prices.csv
+simlab stock-market run --start-price 100 --days 365 --volatility 0.02 --drift 0.001 --output prices.csv
 
 # Get help for all commands
 simlab --help
@@ -99,16 +123,24 @@ simlab-web
 # Then visit http://localhost:8000 in your browser
 ```
 
-## Project Goals (For Students)
+## Educational Applications
 
-- Gain familiarity with using simulations to model dynamic systems
-- Understand the impact of different parameters on simulation outcomes
-- Develop data analysis and visualization skills in the context of business problems
-- Practice translating business concepts into simulation parameters
+SimLab is designed with education in mind, helping students:
+
+- Understand complex systems through hands-on simulation
+- Explore the impact of parameters on system dynamics
+- Develop data analysis and visualization skills
+- Apply theoretical concepts to practical scenarios
+- Create and test hypotheses in a simulated environment
 
 ## Documentation
 
-For more detailed information about using SimLab, see the [documentation](https://yourproject.readthedocs.io/).
+For comprehensive documentation, visit:
+- [Getting Started Guide](https://teaching-repositories.github.io/sim-lab/getting_started/)
+- [API Reference](https://teaching-repositories.github.io/sim-lab/api/)
+- [Simulation Catalog](https://teaching-repositories.github.io/sim-lab/simulations/)
+- [Developer Guide](https://teaching-repositories.github.io/sim-lab/developers/architecture/)
+- [Teaching Guide](https://teaching-repositories.github.io/sim-lab/teaching_guide/)
 
 ## Development
 
@@ -119,7 +151,7 @@ SimLab uses modern Python development tools:
 - [pytest](https://docs.pytest.org/) for testing
 - [MkDocs](https://www.mkdocs.org/) for documentation
 
-To setup a development environment:
+To set up a development environment:
 
 ```bash
 # Clone the repository
@@ -136,6 +168,29 @@ uv pip install -e .[dev]
 ```
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for more details.
+
+## Registry System
+
+SimLab features a powerful registry system for dynamically discovering and instantiating simulators:
+
+```python
+from sim_lab.core import SimulatorRegistry, BaseSimulation
+
+# Register a custom simulator
+@SimulatorRegistry.register("MySimulator")
+class MyCustomSimulation(BaseSimulation):
+    # Your implementation here
+    pass
+
+# List available simulators
+simulators = SimulatorRegistry.list_simulators()
+print(f"Available simulators: {simulators}")
+
+# Create an instance
+sim = SimulatorRegistry.create("MySimulator", days=100, random_seed=42)
+```
+
+For more information, see the [Registry System documentation](https://teaching-repositories.github.io/sim-lab/developers/registry_system/).
 
 ## Contributing
 
