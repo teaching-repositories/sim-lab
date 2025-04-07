@@ -1,8 +1,12 @@
 import numpy as np
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
+
+from .base_simulation import BaseSimulation
+from .registry import SimulatorRegistry
 
 
-class StockMarketSimulation:
+@SimulatorRegistry.register("StockMarket")
+class StockMarketSimulation(BaseSimulation):
     """
     A simulation class to model the fluctuations of stock prices over time, accounting for volatility,
     general market trends (drift), and specific market events.
@@ -37,13 +41,12 @@ class StockMarketSimulation:
             event_impact (float): The severity of the market event, affecting prices multiplicatively.
             random_seed (Optional[int]): Seed for the random number generator to ensure reproducible results (defaults to None).
         """
+        super().__init__(days=days, random_seed=random_seed)
         self.start_price = start_price
-        self.days = days
         self.volatility = volatility
         self.drift = drift
         self.event_day = event_day
         self.event_impact = event_impact
-        self.random_seed = random_seed
 
     def run_simulation(self) -> List[float]:
         """
@@ -52,9 +55,9 @@ class StockMarketSimulation:
         Returns:
             List[float]: A list containing the stock prices for each day of the simulation.
         """
-        if self.random_seed is not None:
-            np.random.seed(self.random_seed)
-
+        # Base class handles random seed initialization
+        self.reset()
+        
         prices = [self.start_price]
         for day in range(1, self.days):
             previous_price = prices[-1]
@@ -67,3 +70,46 @@ class StockMarketSimulation:
             prices.append(new_price)
 
         return prices
+    
+    @classmethod
+    def get_parameters_info(cls) -> Dict[str, Dict[str, Any]]:
+        """Get information about the parameters required by this simulation.
+        
+        Returns:
+            A dictionary mapping parameter names to their metadata (type, description, default, etc.)
+        """
+        # Get base parameters from parent class
+        params = super().get_parameters_info()
+        
+        # Add class-specific parameters
+        params.update({
+            'start_price': {
+                'type': 'float',
+                'description': 'The initial price of the stock',
+                'required': True
+            },
+            'volatility': {
+                'type': 'float',
+                'description': 'The volatility of stock price changes, representing day-to-day variability',
+                'required': True
+            },
+            'drift': {
+                'type': 'float',
+                'description': 'The average daily price change, indicating the trend over time',
+                'required': True
+            },
+            'event_day': {
+                'type': 'int',
+                'description': 'The specific day a major market event occurs',
+                'required': False,
+                'default': None
+            },
+            'event_impact': {
+                'type': 'float',
+                'description': 'The magnitude of the event\'s impact on stock prices',
+                'required': False,
+                'default': 0
+            }
+        })
+        
+        return params

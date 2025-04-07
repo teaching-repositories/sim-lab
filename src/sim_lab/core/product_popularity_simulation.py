@@ -1,8 +1,12 @@
 import numpy as np
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
+
+from .base_simulation import BaseSimulation
+from .registry import SimulatorRegistry
 
 
-class ProductPopularitySimulation:
+@SimulatorRegistry.register("ProductPopularity")
+class ProductPopularitySimulation(BaseSimulation):
     """
     A simulation class to model the dynamics of product popularity over time,
     incorporating factors like natural growth, marketing impact, and promotional campaigns.
@@ -37,13 +41,12 @@ class ProductPopularitySimulation:
             promotion_effectiveness (float): Multiplicative impact of the promotion on demand.
             random_seed (Optional[int]): Seed for the random number generator to ensure reproducible results (defaults to None).
         """
+        super().__init__(days=days, random_seed=random_seed)
         self.start_demand = start_demand
-        self.days = days
         self.growth_rate = growth_rate
         self.marketing_impact = marketing_impact
         self.promotion_day = promotion_day
         self.promotion_effectiveness = promotion_effectiveness
-        self.random_seed = random_seed
 
     def run_simulation(self) -> List[float]:
         """
@@ -52,9 +55,9 @@ class ProductPopularitySimulation:
         Returns:
             List[int]: A list containing the demand for the product for each day of the simulation.
         """
-        if self.random_seed is not None:
-            np.random.seed(self.random_seed)
-
+        # Base class handles random seed initialization
+        self.reset()
+        
         demand = [self.start_demand]
         for day in range(1, self.days):
             previous_demand = demand[-1]
@@ -69,3 +72,46 @@ class ProductPopularitySimulation:
             demand.append(new_demand)
 
         return demand
+    
+    @classmethod
+    def get_parameters_info(cls) -> Dict[str, Dict[str, Any]]:
+        """Get information about the parameters required by this simulation.
+        
+        Returns:
+            A dictionary mapping parameter names to their metadata (type, description, default, etc.)
+        """
+        # Get base parameters from parent class
+        params = super().get_parameters_info()
+        
+        # Add class-specific parameters
+        params.update({
+            'start_demand': {
+                'type': 'float',
+                'description': 'The initial level of demand for the product',
+                'required': True
+            },
+            'growth_rate': {
+                'type': 'float',
+                'description': 'The natural daily growth rate of demand, as a decimal',
+                'required': True
+            },
+            'marketing_impact': {
+                'type': 'float',
+                'description': 'Daily impact of marketing on demand, as a decimal',
+                'required': True
+            },
+            'promotion_day': {
+                'type': 'int',
+                'description': 'The specific day on which a promotional event occurs',
+                'required': False,
+                'default': None
+            },
+            'promotion_effectiveness': {
+                'type': 'float',
+                'description': 'Multiplicative impact of the promotion on demand',
+                'required': False,
+                'default': 0
+            }
+        })
+        
+        return params

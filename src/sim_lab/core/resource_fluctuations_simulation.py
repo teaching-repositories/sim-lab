@@ -1,8 +1,12 @@
 import numpy as np
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
+
+from .base_simulation import BaseSimulation
+from .registry import SimulatorRegistry
 
 
-class ResourceFluctuationsSimulation:
+@SimulatorRegistry.register("ResourceFluctuations")
+class ResourceFluctuationsSimulation(BaseSimulation):
     """
     A simulation class to model the fluctuations of resource prices over time,
     considering factors like volatility, market trends (drift), and supply disruptions.
@@ -31,13 +35,12 @@ class ResourceFluctuationsSimulation:
             disruption_severity (float): The severity of the supply disruption, affecting prices multiplicatively.
             random_seed (Optional[int]): Seed for the random number generator to ensure reproducible results (defaults to None).
         """
+        super().__init__(days=days, random_seed=random_seed)
         self.start_price = start_price
-        self.days = days
         self.volatility = volatility
         self.drift = drift
         self.supply_disruption_day = supply_disruption_day
         self.disruption_severity = disruption_severity
-        self.random_seed = random_seed
 
     def run_simulation(self) -> List[float]:
         """
@@ -46,9 +49,9 @@ class ResourceFluctuationsSimulation:
         Returns:
             List[float]: A list containing the price of the resource for each day of the simulation.
         """
-        if self.random_seed is not None:
-            np.random.seed(self.random_seed)
-
+        # Base class handles random seed initialization
+        self.reset()
+        
         prices = [self.start_price]
         for day in range(1, self.days):
             previous_price = prices[-1]
@@ -61,3 +64,46 @@ class ResourceFluctuationsSimulation:
             prices.append(new_price)
 
         return prices
+    
+    @classmethod
+    def get_parameters_info(cls) -> Dict[str, Dict[str, Any]]:
+        """Get information about the parameters required by this simulation.
+        
+        Returns:
+            A dictionary mapping parameter names to their metadata (type, description, default, etc.)
+        """
+        # Get base parameters from parent class
+        params = super().get_parameters_info()
+        
+        # Add class-specific parameters
+        params.update({
+            'start_price': {
+                'type': 'float',
+                'description': 'The initial price of the resource',
+                'required': True
+            },
+            'volatility': {
+                'type': 'float',
+                'description': 'The volatility of resource price changes, representing day-to-day variability',
+                'required': True
+            },
+            'drift': {
+                'type': 'float',
+                'description': 'The average daily price change, indicating the trend over time',
+                'required': True
+            },
+            'supply_disruption_day': {
+                'type': 'int',
+                'description': 'The specific day a supply disruption occurs',
+                'required': False,
+                'default': None
+            },
+            'disruption_severity': {
+                'type': 'float',
+                'description': 'The magnitude of the disruption\'s impact on prices',
+                'required': False,
+                'default': 0
+            }
+        })
+        
+        return params

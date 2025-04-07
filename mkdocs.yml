@@ -1,5 +1,5 @@
 site_name: SimLab
-site_description: Business Simulation Toolkit
+site_description: Comprehensive Simulation Toolkit
 repo_url: https://github.com/teaching-repositories/sim-lab
 site_url: https://teaching-repositories.github.io/sim-lab/
 
@@ -49,15 +49,39 @@ nav:
   - Home: index.md
   - Getting Started: getting_started.md
   - Simulations:
-    - Stock Market: stock_market.md
-    - Resource Fluctuations: resource_fluctuations.md
-    - Product Popularity: product_popularity.md
+    - Overview: simulations/index.md
+    - Basic Simulations:
+      - Stock Market: simulations/basic/stock_market.md
+      - Resource Fluctuations: simulations/basic/resource_fluctuations.md
+      - Product Popularity: simulations/basic/product_popularity.md
+    - Discrete Event Simulations:
+      - Discrete Event: simulations/discrete_event/discrete_event.md
+      - Queueing: simulations/discrete_event/queueing.md
+    - Statistical Simulations:
+      - Monte Carlo: simulations/statistical/monte_carlo.md
+      - Markov Chain: simulations/statistical/markov_chain.md
+    - Agent-Based Simulation: simulations/agent_based/agent_based.md
+    - System Dynamics: simulations/system_dynamics/system_dynamics.md
+    - Network Simulation: simulations/network/network.md
+    - Ecological Simulations:
+      - Predator-Prey: simulations/ecological/predator_prey.md
+    - Domain-Specific Simulations:
+      - Epidemiological: simulations/domain_specific/epidemiological.md
+      - Cellular Automaton: simulations/domain_specific/cellular_automaton.md
+      - Supply Chain: simulations/domain_specific/supply_chain.md
+  - Developer Guide:
+    - Architecture: developers/architecture.md
+    - Creating New Simulators: developers/creating_simulators.md
+    - Registry System: developers/registry_system.md
   - Interfaces:
     - Python API: api.md
     - CLI: cli.md
     - TUI: tui.md
     - Web: web.md
-  - Modelling: modelling_market_dynamics.md
+  - Use Cases:
+    - Business Modeling: use_cases/business_modeling.md
+    - Scientific Simulation: use_cases/scientific_simulation.md
+    - Educational Tools: use_cases/educational_tools.md
   - Teaching Guide: teaching_guide.md
   - Contributing: contribute.md
   - Contact: contact.md
