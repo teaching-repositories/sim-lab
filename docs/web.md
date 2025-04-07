@@ -1,10 +1,10 @@
 # Web Interface
 
-SimNexus provides a web interface built with FastHTML for running simulations through a browser.
+SimLab provides a web interface built with FastHTML for running simulations through a browser.
 
 ## Installation
 
-Make sure you have installed SimNexus with the web dependencies:
+Make sure you have installed SimLab with the web dependencies:
 
 ```bash
 pip install simnexus[web]
@@ -67,13 +67,13 @@ Coming soon!
 
 ## Behind the Scenes - FastHTML
 
-The SimNexus web interface is built using FastHTML, which combines:
+The SimLab web interface is built using FastHTML, which combines:
 
 - Starlette for ASGI web server
 - HTMX for interactive browser experiences
 - FastTags (FT) for dynamic HTML generation
 
-FastHTML allows SimNexus to create a modern, interactive web interface without the complexity of a full JavaScript framework.
+FastHTML allows SimLab to create a modern, interactive web interface without the complexity of a full JavaScript framework.
 
 ## Deployment
 

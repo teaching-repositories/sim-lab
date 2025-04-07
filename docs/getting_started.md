@@ -1,10 +1,10 @@
-# Getting Started with SimNexus
+# Getting Started with SimLab
 
-Welcome to the getting started guide for SimNexus, a toolkit for simulating various business scenarios including stock market fluctuations, resource price dynamics, and product popularity. This guide will walk you through the installation options and different ways to use SimNexus.
+Welcome to the getting started guide for SimLab, a toolkit for simulating various business scenarios including stock market fluctuations, resource price dynamics, and product popularity. This guide will walk you through the installation options and different ways to use SimLab.
 
 ## Installation Options
 
-SimNexus offers flexible installation options depending on your needs:
+SimLab offers flexible installation options depending on your needs:
 
 ### Basic Installation
 
@@ -44,7 +44,7 @@ pip install git+https://github.com/michael-borck/simnexus.git
 
 ## Verify Installation
 
-To ensure that SimNexus was installed correctly:
+To ensure that SimLab was installed correctly:
 
 ```python
 python -c "import simnexus; print(simnexus.__version__)"
@@ -58,11 +58,11 @@ simnexus --version
 
 ## Usage Methods
 
-SimNexus offers multiple ways to run simulations:
+SimLab offers multiple ways to run simulations:
 
 ### 1. Python Library
 
-Import SimNexus in your Python code:
+Import SimLab in your Python code:
 
 ```python
 from simnexus import StockMarketSimulation
@@ -117,7 +117,7 @@ simnexus ui tui
 
 ## Example Resources
 
-SimNexus includes comprehensive examples to help you get started:
+SimLab includes comprehensive examples to help you get started:
 
 - **Python Examples**: Basic scripts showing simulation usage
 - **CLI Examples**: Shell scripts demonstrating command-line capabilities  
@@ -139,4 +139,4 @@ If you encounter any issues or have questions:
 - Run `simnexus --help` for CLI assistance
 - Contact information is available on the [Contact](contact.md) page
 
-Happy simulating with SimNexus\!
+Happy simulating with SimLab\!

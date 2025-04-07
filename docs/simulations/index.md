@@ -10,31 +10,32 @@ Our simulations are organized into the following categories:
 - [Stock Market Simulation](basic/stock_market.md): Model stock price fluctuations with factors like volatility, drift, and market events
 - [Resource Fluctuations Simulation](basic/resource_fluctuations.md): Simulate resource price dynamics with supply disruptions
 - [Product Popularity Simulation](basic/product_popularity.md): Model product demand considering growth, marketing, and promotions
+- [Modelling Market Dynamics](basic/modelling_market_dynamics.md): Theory behind our market dynamics models
 
 ### Discrete Event Simulations
 - [Discrete Event Simulation](discrete_event/discrete_event.md): General-purpose event-driven simulation engine
-- [Queueing Simulation](discrete_event/queueing.md): Model service systems with arrivals, queues, and servers
+- **Queueing Simulation**: Model service systems with arrivals, queues, and servers (coming soon)
 
 ### Statistical Simulations
-- [Monte Carlo Simulation](statistical/monte_carlo.md): Sample random processes to estimate numerical results
-- [Markov Chain Simulation](statistical/markov_chain.md): Model stochastic processes with the Markov property
+- **Monte Carlo Simulation**: Sample random processes to estimate numerical results (coming soon)
+- **Markov Chain Simulation**: Model stochastic processes with the Markov property (coming soon)
 
 ### Agent-Based Simulations
 - [Agent-Based Simulation](agent_based/agent_based.md): Model complex systems through interactions of autonomous agents
 
 ### System Dynamics
-- [System Dynamics Simulation](system_dynamics/system_dynamics.md): Model systems with stocks, flows, and feedback loops
+- **System Dynamics Simulation**: Model systems with stocks, flows, and feedback loops (coming soon)
 
 ### Network Simulations
 - [Network Simulation](network/network.md): Model processes on complex networks with different topologies
 
 ### Ecological Simulations
-- [Predator-Prey Simulation](ecological/predator_prey.md): Model population dynamics using Lotka-Volterra equations
+- **Predator-Prey Simulation**: Model population dynamics using Lotka-Volterra equations (coming soon)
 
 ### Domain-Specific Simulations
-- [Epidemiological Simulation](domain_specific/epidemiological.md): SIR/SEIR disease spread models
-- [Cellular Automaton Simulation](domain_specific/cellular_automaton.md): Grid-based models with local update rules
-- [Supply Chain Simulation](domain_specific/supply_chain.md): Model multi-tier supply chains with inventory management
+- **Epidemiological Simulation**: SIR/SEIR disease spread models (coming soon)
+- **Cellular Automaton Simulation**: Grid-based models with local update rules (coming soon)
+- **Supply Chain Simulation**: Model multi-tier supply chains with inventory management (coming soon)
 
 ## Common Features
 

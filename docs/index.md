@@ -1,29 +1,29 @@
-# SimNexus Overview
+# SimLab Overview
 
-Welcome to the documentation for the SimNexus framework. This framework includes several simulation models that are designed to demonstrate and analyze various phenomena in business and economics. Here, you will find detailed information on the workings and usage of each simulation model.
+Welcome to the documentation for the SimLab framework. This framework includes several simulation models that are designed to demonstrate and analyze various phenomena in business and economics. Here, you will find detailed information on the workings and usage of each simulation model.
 
 ### Product Popularity Simulation
 
 The Product Popularity Simulation models the dynamics of product demand over time, considering factors like natural growth, marketing impact, and promotional campaigns.
 
-- [Learn more about the Product Popularity Simulation](./product_popularity.md)
+- [Learn more about the Product Popularity Simulation](./simulations/basic/product_popularity.md)
 
 ### Stock Market Simulation
 
 The Stock Market Simulation provides a framework for modeling and predicting stock price movements based on various economic and psychological factors.
 
-- [Learn more about the Stock Market Simulation](./stock_market.md)
+- [Learn more about the Stock Market Simulation](./simulations/basic/stock_market.md)
 
 ### Resource Fluctuations Simulation
 
 The Resource Fluctuations Simulation models the price variability of resources over time, factoring in elements like market volatility, economic drift, and external disruptions.
 
-- [Learn more about the Resource Fluctuations Simulation](./resource_fluctuations.md)
+- [Learn more about the Resource Fluctuations Simulation](./simulations/basic/resource_fluctuations.md)
 
 
 ### Modelling Market Dynamics
 
-Each model incorporates different aspects of market behavior and is linked to classical and traditional models in economics and finance.  See [Modelling Market Dynamics](./modelling_market_dynamics.md)
+Each model incorporates different aspects of market behavior and is linked to classical and traditional models in economics and finance.  See [Modelling Market Dynamics](./simulations/basic/modelling_market_dynamics.md)
 
 ## Getting Started
 

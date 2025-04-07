@@ -1,10 +1,10 @@
 # Terminal User Interface (TUI)
 
-SimNexus provides a Terminal User Interface (TUI) for running simulations interactively within your terminal.
+SimLab provides a Terminal User Interface (TUI) for running simulations interactively within your terminal.
 
 ## Installation
 
-Make sure you have installed SimNexus with the TUI dependencies:
+Make sure you have installed SimLab with the TUI dependencies:
 
 ```bash
 pip install simnexus[dev]

@@ -1,352 +1,85 @@
 # Stock Market Simulation
 
-The Stock Market Simulation models the fluctuations of stock prices over time, accounting for volatility, general market trends (drift), and specific market events.
+## Purpose
 
-## Overview
-
-The stock market simulation is based on a modified random walk model with the following key features:
-
-- Daily price changes follow a normal distribution
-- Adjustable volatility to control price variation
-- Market drift parameter to model bullish or bearish trends
-- Support for major market events on specific days
-- Reproducible results with random seed control
-
-## Basic Usage
-
-```python
-from sim_lab.core import SimulatorRegistry
-
-# Create a stock market simulation
-sim = SimulatorRegistry.create(
-    "StockMarket",
-    start_price=100.0,
-    days=252,           # Typical number of trading days in a year
-    volatility=0.02,    # 2% daily volatility
-    drift=0.0005,       # 0.05% average daily growth
-    random_seed=42      # For reproducible results
-)
-
-# Run the simulation
-prices = sim.run_simulation()
-
-# Access the results
-print(f"Starting price: ${prices[0]:.2f}")
-print(f"Final price: ${prices[-1]:.2f}")
-print(f"Return: {(prices[-1]/prices[0] - 1) * 100:.2f}%")
-```
+This simulation models the fluctuations of stock prices, enabling students to explore financial market dynamics and develop basic trading strategies. It serves as a practical tool for understanding the principles of market speculation and risk management.
 
 ## Parameters
 
-The Stock Market Simulation accepts the following parameters:
+- `start_price`: The initial price of the stock.
+- `days`: The duration of the simulation.
+- `volatility`: The measure of price fluctuations, indicating how much the price can vary day-to-day.
+- `drift`: Represents the overall trend in stock prices, whether upward or downward.
+- `event_day`: Specifies the day on which a major market event occurs (optional).
+- `event_impact`: The magnitude of the event’s impact on stock prices, positive for beneficial events and negative for detrimental ones.
 
-| Parameter | Type | Description | Required | Default |
-|-----------|------|-------------|----------|---------|
-| `start_price` | float | The initial price of the stock | Yes | - |
-| `days` | int | The duration of the simulation in days | Yes | - |
-| `volatility` | float | The volatility of stock price changes | Yes | - |
-| `drift` | float | The average daily price change trend | Yes | - |
-| `event_day` | int | The day a major market event occurs | No | None |
-| `event_impact` | float | The magnitude of the event's impact | No | 0 |
-| `random_seed` | int | Seed for random number generation | No | None |
-
-## Understanding the Model
-
-### Price Generation
-
-The stock price for each day is calculated using the following formula:
-
-```
-price[day] = price[day-1] * (1 + random_change)
-```
-
-Where `random_change` is drawn from a normal distribution with mean `drift` and standard deviation `volatility`.
-
-### Market Events
-
-If an `event_day` is specified, a market event occurs on that day with the following impact:
-
-```
-price[event_day] = price[event_day-1] * (1 + event_impact)
-```
-
-This can model significant events like earnings announcements, market crashes, or other macroeconomic events.
-
-## Example: Simulating a Market Crash
+**Example Code**
 
 ```python
-from sim_lab.core import SimulatorRegistry
+from simnexus import StockMarketSimulation
 import matplotlib.pyplot as plt
 
-# Create a simulation with a market crash
-sim = SimulatorRegistry.create(
-    "StockMarket",
-    start_price=100.0,
-    days=252,
-    volatility=0.015,
-    drift=0.0008,
-    event_day=125,       # Crash happens on day 125
-    event_impact=-0.15,  # 15% market drop
-    random_seed=42
-)
+# Example scenario: High volatility with a downward price trend and a significant market event.
+sim = StockMarketSimulation(start_price=100, days=365, volatility=0.03, 
+                            drift=-0.001, event_day=100, event_impact=-0.2)
 
-# Run the simulation
 prices = sim.run_simulation()
 
-# Visualize the results
-plt.figure(figsize=(12, 6))
-plt.plot(prices)
-plt.axvline(x=125, color='r', linestyle='--', label='Market Crash')
-plt.title('Stock Price with Market Crash')
-plt.xlabel('Trading Days')
+# Visualising the stock market fluctuations
+plt.figure(figsize=(10, 6))
+plt.plot(prices, label='Stock Price')
+plt.axvline(x=sim.event_day, color='red', linestyle='--', label='Major Market Event')
+plt.xlabel('Days')
 plt.ylabel('Price ($)')
+plt.title('Stock Market Simulation')
 plt.legend()
-plt.grid(True)
 plt.show()
 ```
 
-## Example: Comparing Market Conditions
+## Conducting Visual Analysis Using the Simulation:
 
-```python
-from sim_lab.core import SimulatorRegistry
-import matplotlib.pyplot as plt
-import numpy as np
+Experiment! Use the simulation to explore and test various scenarios. Adjust parameters, try different strategies, and analyse the outcomes to gain deeper insights into resource management under fluctuating conditions.
 
-# Create simulations for different market conditions
-bull_market = SimulatorRegistry.create(
-    "StockMarket",
-    start_price=100.0,
-    days=252,
-    volatility=0.01,
-    drift=0.001,      # Strong positive drift (bull market)
-    random_seed=42
-)
+- **Baseline Scenario Without Disruptions**: Begin by simulating the price path without any disruptions to establish a baseline for comparison with more complex scenarios.
+  
+- **Labeling and Annotations**: Ensure that your plots clearly show the days on the x-axis and price on the y-axis. Use lines or markers to indicate the day of the event or the implementation of a trading strategy.
 
-bear_market = SimulatorRegistry.create(
-    "StockMarket",
-    start_price=100.0,
-    days=252,
-    volatility=0.02,
-    drift=-0.0005,    # Negative drift (bear market)
-    random_seed=42
-)
+- **Interactive Exploration**: If tools are available, adjust parameters such as volatility and drift dynamically to observe how these changes affect the price simulation. This can help in understanding the immediate effects of each parameter.
 
-volatile_market = SimulatorRegistry.create(
-    "StockMarket",
-    start_price=100.0,
-    days=252,
-    volatility=0.03,  # High volatility
-    drift=0.0003,
-    random_seed=42
-)
+- **Comparative Analysis**: Conduct side-by-side comparisons of scenarios with different levels of volatility or different strategies to visually assess their impact. This can make it easier to understand which conditions or strategies lead to the most favorable outcomes.  Consider calculating and comparing statistics such as the average price before and after a disruption event to quantify its impact.
 
-# Run simulations
-bull_prices = bull_market.run_simulation()
-bear_prices = bear_market.run_simulation()
-volatile_prices = volatile_market.run_simulation()
+## Use Case Ideas
 
-# Plot results
-plt.figure(figsize=(12, 6))
-plt.plot(bull_prices, label='Bull Market')
-plt.plot(bear_prices, label='Bear Market')
-plt.plot(volatile_prices, label='Volatile Market')
-plt.title('Stock Prices Under Different Market Conditions')
-plt.xlabel('Trading Days')
-plt.ylabel('Price ($)')
-plt.legend()
-plt.grid(True)
-plt.show()
-```
+### Investigate How Volatility Affects Stock Price Stability
 
-## Monte Carlo Analysis
+Begin by analysing how different levels of volatility impact the stability of stock prices and the potential for investment gains or losses. Questions to Consider:
 
-You can run multiple simulations to assess the range of possible outcomes:
+  - How do changes in volatility affect the frequency and magnitude of price swings?
 
-```python
-from sim_lab.core import SimulatorRegistry
-import matplotlib.pyplot as plt
-import numpy as np
+  - What implications does increased volatility have on the risk and potential returns of stock investments?
 
-# Parameters for all simulations
-start_price = 100.0
-days = 252
-volatility = 0.02
-drift = 0.0005
+### Simulate a Major Market Event and Analyse Its Impact
 
-# Run multiple simulations
-num_simulations = 100
-all_prices = []
+Set up scenarios where a significant market event affects stock prices on a specific day. Adjust the impact of these events to observe varying outcomes. Questions to Consider:
 
-for i in range(num_simulations):
-    sim = SimulatorRegistry.create(
-        "StockMarket",
-        start_price=start_price,
-        days=days,
-        volatility=volatility,
-        drift=drift,
-        random_seed=None  # Different seed each time
-    )
-    prices = sim.run_simulation()
-    all_prices.append(prices)
+  - How does the market respond to positive versus negative events?
 
-# Convert to numpy array for easier analysis
-all_prices = np.array(all_prices)
+  - Analyse the recovery or further decline in stock prices following the event. What does this tell you about market sentiment and investor behavior?
 
-# Calculate statistics
-mean_price = np.mean(all_prices, axis=0)
-median_price = np.median(all_prices, axis=0)
-q5_price = np.percentile(all_prices, 5, axis=0)
-q95_price = np.percentile(all_prices, 95, axis=0)
+### Develop and Test Trading Strategies
 
-# Plot results
-plt.figure(figsize=(12, 6))
-plt.plot(mean_price, 'b', label='Mean Price')
-plt.plot(median_price, 'g', label='Median Price')
-plt.fill_between(range(days), q5_price, q95_price, color='b', alpha=0.2, label='90% Confidence Interval')
-plt.title('Monte Carlo Simulation of Stock Prices')
-plt.xlabel('Trading Days')
-plt.ylabel('Price ($)')
-plt.legend()
-plt.grid(True)
-plt.show()
+Explore basic trading strategies such as "buy and hold", "moving average crossover", or "momentum-based" strategies. Implement these strategies in your simulation to test their effectiveness over time. Questions to Consider:
 
-# Display final price statistics
-final_prices = all_prices[:, -1]
-print(f"Expected final price: ${np.mean(final_prices):.2f}")
-print(f"Median final price: ${np.median(final_prices):.2f}")
-print(f"5th percentile: ${np.percentile(final_prices, 5):.2f}")
-print(f"95th percentile: ${np.percentile(final_prices, 95):.2f}")
-```
+  - Which strategy performs best under stable versus volatile market conditions?
 
-## Advanced Topics
+  - How do these strategies perform in response to the simulated market events?
 
-### Incorporating Dividend Payments
 
-You can extend the model to incorporate dividend payments:
+## Model Description
 
-```python
-from sim_lab.core import SimulatorRegistry
+The Stock Market Simulation class focuses on the fluctuations in stock prices influenced by daily volatility, market trends, and specific market events. The simulation adjusts stock prices daily based on:
 
-# Create a simulation with quarterly dividends
-sim = SimulatorRegistry.create(
-    "StockMarket",
-    start_price=100.0,
-    days=252,
-    volatility=0.015,
-    drift=0.0007,
-    random_seed=42
-)
+- Random daily changes due to volatility and drift.
+- Event impacts that multiplicatively affect the stock prices on designated days.
 
-# Run the simulation
-prices = sim.run_simulation()
-
-# Manually add quarterly dividends (assume 1% dividend yield per quarter)
-quarterly_dividend = 0.01 * sim.start_price / 4
-dividend_days = [63, 126, 189, 252]  # Quarterly dividend days
-total_dividends = 0
-
-for day in dividend_days:
-    if day < len(prices):
-        total_dividends += quarterly_dividend
-
-# Calculate total return including dividends
-price_return = (prices[-1] / prices[0] - 1) * 100
-dividend_return = (total_dividends / prices[0]) * 100
-total_return = price_return + dividend_return
-
-print(f"Price return: {price_return:.2f}%")
-print(f"Dividend return: {dividend_return:.2f}%")
-print(f"Total return: {total_return:.2f}%")
-```
-
-### Correlation Between Multiple Stocks
-
-You can model correlations between multiple stocks:
-
-```python
-from sim_lab.core import SimulatorRegistry
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Number of stocks to simulate
-num_stocks = 3
-days = 252
-
-# Create correlated random changes
-# Use a correlation matrix
-correlation_matrix = np.array([
-    [1.0, 0.7, 0.3],  # Stock 1 correlations
-    [0.7, 1.0, 0.5],  # Stock 2 correlations
-    [0.3, 0.5, 1.0]   # Stock 3 correlations
-])
-
-# Parameters for each stock
-start_prices = [100.0, 50.0, 75.0]
-volatilities = [0.01, 0.015, 0.02]
-drifts = [0.0005, 0.0007, 0.0003]
-
-# Generate correlated normal random values
-np.random.seed(42)
-random_changes = np.random.multivariate_normal(
-    mean=drifts,
-    cov=np.outer(volatilities, volatilities) * correlation_matrix,
-    size=days
-)
-
-# Initialize prices array
-prices = np.zeros((num_stocks, days))
-prices[:, 0] = start_prices
-
-# Generate price paths
-for day in range(1, days):
-    for stock in range(num_stocks):
-        prices[stock, day] = prices[stock, day-1] * (1 + random_changes[day-1, stock])
-
-# Plot results
-plt.figure(figsize=(12, 6))
-for stock in range(num_stocks):
-    plt.plot(prices[stock, :], label=f'Stock {stock+1}')
-
-plt.title('Correlated Stock Price Movements')
-plt.xlabel('Trading Days')
-plt.ylabel('Price ($)')
-plt.legend()
-plt.grid(True)
-plt.show()
-
-# Calculate correlation of returns
-returns = np.diff(prices, axis=1) / prices[:, :-1]
-empirical_correlation = np.corrcoef(returns)
-print("Empirical correlation matrix of returns:")
-print(empirical_correlation)
-```
-
-## API Reference
-
-### StockMarketSimulation
-
-```python
-StockMarketSimulation(
-    start_price: float,
-    days: int,
-    volatility: float,
-    drift: float,
-    event_day: Optional[int] = None,
-    event_impact: float = 0,
-    random_seed: Optional[int] = None
-)
-```
-
-#### Methods
-
-- **run_simulation()**: Run the simulation and return a list of stock prices over time.
-- **reset()**: Reset the simulation to its initial state.
-
-## Further Reading
-
-For more information about stock market modeling and financial simulations:
-
-- [Random Walk Hypothesis](https://en.wikipedia.org/wiki/Random_walk_hypothesis)
-- [Geometric Brownian Motion](https://en.wikipedia.org/wiki/Geometric_Brownian_motion)
-- [Option Pricing Models](https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model)
-- [Market Volatility](https://en.wikipedia.org/wiki/Volatility_(finance))
+See [Modelling Market Dynamics](./modelling_market_dynamics.md) for more information.

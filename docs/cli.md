@@ -1,10 +1,10 @@
 # Command Line Interface
 
-SimNexus provides a command-line interface (CLI) for running simulations, launching interfaces, and managing the application.
+SimLab provides a command-line interface (CLI) for running simulations, launching interfaces, and managing the application.
 
 ## Installation
 
-Make sure you have installed SimNexus with the CLI dependencies:
+Make sure you have installed SimLab with the CLI dependencies:
 
 ```bash
 pip install simnexus[cli]
@@ -27,7 +27,7 @@ simnexus
 │   ├── web          Launch the web interface
 │   └── tui          Launch the terminal user interface
 └── util             Utility commands
-    └── info         Show information about SimNexus
+    └── info         Show information about SimLab
 ```
 
 ## Running Simulations
@@ -89,7 +89,7 @@ simnexus ui tui
 ## Utility Commands
 
 ```bash
-# Show information about SimNexus
+# Show information about SimLab
 simnexus util info
 
 # Show version
