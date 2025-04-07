@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}Stock Market Simulation - SimLab{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Stock Market Simulation</h5>
+            </div>
+            <div class="card-body">
+                <form id="simulation-form" hx-post="/api/stock/run" hx-target="#simulation-results" hx-indicator="#loading-indicator">
+                    <div class="mb-3">
+                        <label for="days" class="form-label">Days to Simulate</label>
+                        <input type="number" class="form-control" id="days" name="days" value="365" min="10" max="3650">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="start_price" class="form-label">Starting Price ($)</label>
+                        <input type="number" class="form-control" id="start_price" name="start_price" value="100" min="1" max="10000" step="0.01">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="volatility" class="form-label">Daily Volatility (%)</label>
+                        <input type="range" class="form-range" id="volatility" name="volatility" min="0.1" max="10" step="0.1" value="2">
+                        <div class="d-flex justify-content-between">
+                            <span>Low (0.1%)</span>
+                            <span id="volatility-value">2%</span>
+                            <span>High (10%)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="drift" class="form-label">Daily Drift (%)</label>
+                        <input type="range" class="form-range" id="drift" name="drift" min="-1" max="1" step="0.01" value="0.1">
+                        <div class="d-flex justify-content-between">
+                            <span>Bearish (-1%)</span>
+                            <span id="drift-value">0.1%</span>
+                            <span>Bullish (1%)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 border-top pt-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="enable_event" name="enable_event">
+                            <label class="form-check-label" for="enable_event">Include Market Event</label>
+                        </div>
+                    </div>
+                    
+                    <div id="event-controls" class="d-none">
+                        <div class="mb-3">
+                            <label for="event_day" class="form-label">Event Day</label>
+                            <input type="number" class="form-control" id="event_day" name="event_day" value="180" min="1">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="event_impact" class="form-label">Event Impact (%)</label>
+                            <input type="range" class="form-range" id="event_impact" name="event_impact" min="-50" max="50" step="1" value="-20">
+                            <div class="d-flex justify-content-between">
+                                <span>Crash (-50%)</span>
+                                <span id="event-impact-value">-20%</span>
+                                <span>Boom (50%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="random_seed" class="form-label">Random Seed (optional)</label>
+                        <input type="number" class="form-control" id="random_seed" name="random_seed" placeholder="Leave blank for random">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Run Simulation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>Simulation Results</h5>
+                <div id="loading-indicator" class="htmx-indicator spinner-border spinner-border-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <div class="card-body results-container">
+                <div id="simulation-results" class="text-center py-5">
+                    <p class="text-muted">Configure and run a simulation to see results here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Update displayed values for sliders
+    document.getElementById('volatility').addEventListener('input', function() {
+        document.getElementById('volatility-value').textContent = this.value + '%';
+    });
+    
+    document.getElementById('drift').addEventListener('input', function() {
+        document.getElementById('drift-value').textContent = this.value + '%';
+    });
+    
+    document.getElementById('event_impact').addEventListener('input', function() {
+        document.getElementById('event-impact-value').textContent = this.value + '%';
+    });
+    
+    // Toggle market event controls
+    document.getElementById('enable_event').addEventListener('change', function() {
+        const eventControls = document.getElementById('event-controls');
+        if (this.checked) {
+            eventControls.classList.remove('d-none');
+        } else {
+            eventControls.classList.add('d-none');
+        }
+    });
+    
+    // Update event day max value based on days
+    document.getElementById('days').addEventListener('change', function() {
+        document.getElementById('event_day').max = this.value;
+    });
+</script>
+{% endblock %}

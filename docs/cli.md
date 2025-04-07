@@ -7,7 +7,7 @@ SimLab provides a command-line interface (CLI) for running simulations, launchin
 Make sure you have installed SimLab with the CLI dependencies:
 
 ```bash
-pip install simnexus[cli]
+pip install sim-lab[cli]
 ```
 
 ## Command Structure
@@ -15,7 +15,7 @@ pip install simnexus[cli]
 The CLI is structured with a hierarchical command system:
 
 ```
-simnexus
+simlab
 ├── sim              Commands for running simulations
 │   ├── stock        Stock market simulation commands
 │   │   └── run      Run a stock market simulation
@@ -36,32 +36,45 @@ simnexus
 
 ```bash
 # Run a basic stock market simulation
-simnexus sim stock run --start-price 100 --days 365 --volatility 0.02 --drift 0.001
+simlab sim stock run --start-price 100 --days 365 --volatility 0.02 --drift 0.001
 
 # Include a market event
-simnexus sim stock run --start-price 150 --days 500 --volatility 0.03 --drift 0.002 --event-day 250 --event-impact -0.15
+simlab sim stock run --start-price 150 --days 500 --volatility 0.03 --drift 0.002 --event-day 250 --event-impact -0.15
 
 # Save the results to a specific file
-simnexus sim stock run --start-price 100 --days 365 --volatility 0.02 --drift 0.001 --output my_simulation.csv
+simlab sim stock run --start-price 100 --days 365 --volatility 0.02 --drift 0.001 --output my_simulation.csv
 
 # Visualize the results (requires matplotlib)
-simnexus sim stock run --days 365 --event-day 180 --event-impact -0.2 --viz
+simlab sim stock run --days 365 --event-day 180 --event-impact -0.2 --viz
 ```
 
 ### Resource Fluctuations Simulation
 
 ```bash
 # Run a basic resource simulation
-simnexus sim resource run --start-price 50 --days 365 --volatility 0.05 --drift 0.001
+simlab sim resource run --start-price 50 --days 365 --volatility 0.05 --drift 0.001
 
 # Include a supply disruption
-simnexus sim resource run --start-price 75 --days 500 --volatility 0.04 --drift 0.002 --disruption-day 200 --disruption-severity 0.3
+simlab sim resource run --start-price 75 --days 500 --volatility 0.04 --drift 0.002 --disruption-day 200 --disruption-severity 0.3
 
 # Save the results to a specific file
-simnexus sim resource run --start-price 50 --days 365 --volatility 0.05 --drift 0.001 --output resource_prices.csv
+simlab sim resource run --start-price 50 --days 365 --volatility 0.05 --drift 0.001 --output resource_prices.csv
 
 # Visualize the results (requires matplotlib)
-simnexus sim resource run --disruption-day 180 --disruption-severity 0.3 --viz
+simlab sim resource run --disruption-day 180 --disruption-severity 0.3 --viz
+```
+
+### Product Popularity Simulation
+
+```bash
+# Run a basic product popularity simulation
+simlab sim product run --initial-popularity 0.01 --virality 0.1 --marketing 0.05 --days 365
+
+# Save the results to a specific file
+simlab sim product run --initial-popularity 0.02 --virality 0.15 --marketing 0.08 --days 300 --output product_popularity.csv
+
+# Visualize the results (requires matplotlib)
+simlab sim product run --initial-popularity 0.05 --virality 0.2 --marketing 0.1 --days 200 --viz
 ```
 
 ## Running User Interfaces
@@ -70,30 +83,27 @@ simnexus sim resource run --disruption-day 180 --disruption-severity 0.3 --viz
 
 ```bash
 # Start the web interface with default settings
-simnexus ui web
+simlab ui web
 
 # Specify host and port
-simnexus ui web --host 0.0.0.0 --port 5000
-
-# Enable auto-reload for development
-simnexus ui web --reload
+simlab ui web --host 0.0.0.0 --port 5000
 ```
 
 ### Terminal User Interface
 
 ```bash
 # Start the terminal user interface
-simnexus ui tui
+simlab ui tui
 ```
 
 ## Utility Commands
 
 ```bash
 # Show information about SimLab
-simnexus util info
+simlab util info
 
 # Show version
-simnexus --version
+simlab --version
 ```
 
 ## Getting Help
@@ -102,14 +112,14 @@ You can get help for any command by using the `--help` flag:
 
 ```bash
 # Get general help
-simnexus --help
+simlab --help
 
 # Get help for a command group
-simnexus sim --help
+simlab sim --help
 
 # Get help for a specific simulation type
-simnexus sim stock --help
+simlab sim stock --help
 
 # Get help for a specific command
-simnexus sim stock run --help
+simlab sim stock run --help
 ```

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}SimLab - Simulation Toolkit{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">SimLab</h1>
+    <div class="col-lg-8 mx-auto">
+        <p class="lead mb-4">
+            A comprehensive simulation toolkit for educational purposes. 
+            SimLab provides a variety of simulations including stock markets, 
+            resource fluctuations, product popularity, and more.
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/stock" class="btn btn-primary btn-lg px-4 gap-3">Get Started</a>
+            <a href="/docs" class="btn btn-outline-secondary btn-lg px-4">Documentation</a>
+        </div>
+    </div>
+</div>
+
+<div class="container px-4 py-5" id="simulation-cards">
+    <h2 class="pb-2 border-bottom">Available Simulations</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+        <div class="col">
+            <div class="card h-100 simulation-card" onclick="window.location.href='/stock'">
+                <div class="card-body">
+                    <h5 class="card-title">Stock Market Simulation</h5>
+                    <p class="card-text">Simulate stock market price fluctuations with customizable volatility, drift, and market events.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Basic Simulation</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 simulation-card" onclick="window.location.href='/resource'">
+                <div class="card-body">
+                    <h5 class="card-title">Resource Fluctuations</h5>
+                    <p class="card-text">Model the price dynamics of resources with supply and demand factors, including supply disruptions.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Basic Simulation</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 simulation-card" onclick="window.location.href='/product'">
+                <div class="card-body">
+                    <h5 class="card-title">Product Popularity</h5>
+                    <p class="card-text">Simulate how products gain popularity through marketing and word-of-mouth effects.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Basic Simulation</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="pb-2 border-bottom">Coming Soon</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+        <div class="col">
+            <div class="card h-100 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">Agent-Based Simulation</h5>
+                    <p class="card-text">Model complex systems through the actions and interactions of autonomous agents.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Advanced Simulation</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">System Dynamics</h5>
+                    <p class="card-text">Model systems with stocks, flows, and feedback loops for complex system analysis.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Advanced Simulation</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">Network Simulation</h5>
+                    <p class="card-text">Analyze how information, diseases, or behaviors spread through network structures.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Advanced Simulation</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
